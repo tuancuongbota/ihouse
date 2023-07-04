@@ -5,6 +5,9 @@
     width: 100%;
     z-index: 1000;
     padding: 10px 0;
+    &:hover {
+      background-color: #000;
+    }
     @media screen and (min-width: 1024px) {
         height:78px
     }
