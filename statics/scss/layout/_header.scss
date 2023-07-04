@@ -1,0 +1,62 @@
+.header {
+    height: 74px;
+    position: fixed;
+    transition: background-color .6s;
+    width: 100%;
+    z-index: 1000;
+    padding: 10px 0;
+    @media screen and (min-width: 1024px) {
+        height:78px
+    }
+    &-search {
+        display: flex;
+        justify-content: center;
+        &-toggle {
+          background: url(../img/search-white.svg?v=2666) center center no-repeat transparent;
+          background-size: 54%;
+          border: 0;
+          cursor: pointer;
+          display: block;
+          height: 30px;
+          font-size: 0;
+          opacity: .7;
+          position: absolute;
+          transition: opacity .5s;
+          width: 30px;
+          z-index: 1;
+          background-position: center;
+        }
+      
+       &-wrapper {
+          overflow: hidden;
+          position: relative;
+          width: 0;
+          opacity: 0;
+        }
+      }
+      &-nav-list {
+        display: flex;
+        justify-content: flex-end;
+      
+        li {
+          padding: 0 15px;
+          line-height: 1;
+      
+          a {
+            &:hover {
+              opacity: 1;
+            }
+      
+            transition: opacity .1s ease-in-out;
+            text-decoration: none;
+            font-weight: 400;
+            display: block;
+            color: #fff;
+            letter-spacing: .5px;
+            font-size: 14px;
+            opacity: .7;
+          }
+        }
+      }
+      
+}
