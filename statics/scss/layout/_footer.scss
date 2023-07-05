@@ -1,9 +1,52 @@
 .footer{
+  &-top {
+    bottom: 30px;
+    position: absolute;
+    right: 45px;
+    z-index: 100;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    .socail-media {
+      a {
+        display: -webkit-box;
+        display: -ms-flexbox;
+        display: flex;
+        -webkit-box-align: center;
+        -ms-flex-align: center;
+        align-items: center;
+        gap: 0.5rem;
+        font-weight: 400 !important;
+        min-height: 33px;
+        border-radius: 25px;
+        font-size: .875rem;
+        color: #fff;
+        white-space: nowrap;
+        height: 40px;
+        width: 40px;
+        padding: 0;
+        min-width: auto;
+        -webkit-box-pack: center;
+        -ms-flex-pack: center;
+        justify-content: center;
+        background-color: rgba(255, 255, 255, 0.15);
+        border-color: #333;
+        text-decoration: none;
+    
+        &:hover {
+          background-color: rgba(255, 255, 255, 0.25);
+          color: #fff;
+        }
+      }
+    
+      display: flex;
+      gap: 10px;
+      margin-right: 25px;
+    }
+    
+  }
     .language {
-        bottom: 30px;
-        position: absolute;
-        right: 45px;
-        z-index: 100;
+       position: relative;
         &_overlay_content {
             background-color: rgba(255, 255, 255, 0.25);
             border-radius: 8px;

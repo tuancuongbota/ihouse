@@ -23,3 +23,57 @@ ul,ol{
         padding-right: 48px;
     }
 }
+:root {
+    --fa-font-light:normal 300 1em/1 "Font Awesome 6 Pro";
+    --fa-font-regular:normal 400 1em/1 "Font Awesome 6 Pro";
+    --fa-font-solid:normal 900 1em/1 "Font Awesome 6 Pro";
+    --fa-font-brands:normal 400 1em/1 "Font Awesome 6 Brands";
+  }
+  
+  @font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 300;
+    font-display: block;
+    src: url(../fonts/fa-light-300.woff2) format("woff2"), url(../fonts/fa-light-300.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(../fonts/fa-regular-400.woff2) format("woff2"), url(../fonts/fa-regular-400.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Font Awesome 6 Pro";
+    font-style: normal;
+    font-weight: 900;
+    font-display: block;
+    src: url(../fonts/fa-solid-900.woff2) format("woff2"), url(../fonts/fa-solid-900.ttf) format("truetype");
+  }
+  
+  @font-face {
+    font-family: "Font Awesome 6 Brands";
+    font-style: normal;
+    font-weight: 400;
+    font-display: block;
+    src: url(../fonts/fa-brands-400.woff2) format("woff2"), url(../fonts/fa-brands-400.ttf) format("truetype");
+  }
+  .fal, .fa-light {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+  }
+  .far,.fa-regular {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 400
+  }
+  .fas,.fa-solid {
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 900
+  }
+  .fab,.fa-brands {
+    font-family: "Font Awesome 6 Brands";
+    font-weight: 400
+  }
