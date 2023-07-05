@@ -8,6 +8,11 @@
     &:hover {
       background-color: #000;
     }
+    .header-nav-toggle{
+        @media screen and (min-width: 1024px) {
+            display: none;
+        }
+    }
     @media screen and (min-width: 1024px) {
         height:78px
     }

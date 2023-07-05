@@ -88,8 +88,10 @@ $(document).ready(function(){
     $('.search-gradient').removeClass('active');
   });
   $('.header-nav-toggle').on('click', function() {
+    $('.header-toggle-content').toggleClass('open');
     $('.header-right-mb').toggleClass('active');
     $('.mb-gradient').toggleClass('active');
+    $('body').toggleClass('body-gradient');
     $('.search-gradient').removeClass('active');
     $('body').removeClass('search_active');
   });

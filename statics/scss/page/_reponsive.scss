@@ -65,6 +65,46 @@
           
         }
       }
+      .mb-gradient.active .header-toggle-opened {
+        opacity: 1;
+      }
+      
+      .header-toggle-opened {
+        background-color: transparent;
+        border: none;
+        display: block;
+        height: 24px;
+        position: absolute;
+        width: 24px;
+        opacity: 0;
+      }
+      
+      .header-icon-cross-wrap {
+        background-color: #fff;
+        border-radius: 100%;
+        display: block;
+        height: 24px;
+        left: 0;
+        position: absolute;
+        -webkit-transform: none;
+        -ms-transform: none;
+        transform: none;
+        top: 0;
+        width: 24px;
+      
+        .header-icon-cross {
+          background: url(../img/cross-black.svg?v=2666) center center no-repeat transparent;
+          background-size: 100%;
+          display: block;
+          height: 10px;
+          left: 50%;
+          position: absolute;
+          top: 50%;
+          transform: translate(-50%, -50%) scale(0);
+          width: 10px;
+          transition: all .5s;
+        }
+      }
       body.search_active {
         .header-right-mb.active {
             .header-search {
@@ -75,4 +115,20 @@
             }
         }
       }
+      body.body-gradient {
+        .header-toggle-opened, .header-nav-toggle .header-toggle-content {
+          opacity: 1;
+        }
+        .header-pulse{
+            opacity: 0;
+        }
+      
+        .header {
+          background: #000;
+        }
+        .header-icon-cross-wrap .header-icon-cross{
+            transform: translate(-50%, -50%) matrix(1, 0, 0, 1, 0, 0);
+        }
+      }
+      
 }
