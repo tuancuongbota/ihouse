@@ -77,4 +77,20 @@ $(document).ready(function(){
       });
     }
   });
+  $('.header-search-toggle').on('click', function() {
+    $('.header-search-wrapper').toggleClass('active');
+    $('body').toggleClass('search_active');
+    $('.search-gradient').toggleClass('active');
+  });
+  $('.search-gradient').on('click', function() {
+    $('.header-search-wrapper').removeClass('active');
+    $('body').removeClass('search_active');
+    $('.search-gradient').removeClass('active');
+  });
+  $('.header-nav-toggle').on('click', function() {
+    $('.header-right-mb').toggleClass('active');
+    $('.mb-gradient').toggleClass('active');
+    $('.search-gradient').removeClass('active');
+    $('body').removeClass('search_active');
+  });
 });

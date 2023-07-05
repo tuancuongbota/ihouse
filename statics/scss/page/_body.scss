@@ -6,6 +6,14 @@ body{
     letter-spacing: .5px;
     font-size: 16px;
     font-size: 16px;
+    &.search_active{
+        .header-search {
+            width: 100%;
+        }
+        .header-menu-list {
+            transform: translateY(-100vh);
+        }
+    }
 }
 img{
     max-width: 100%;
