@@ -1,4 +1,7 @@
 @media screen and (max-width: 1024px) { 
+  .search-page .nav-tabs {
+    max-width: calc(100% - 60px);
+}
     .header-nav-list {
     flex-wrap: wrap;
 

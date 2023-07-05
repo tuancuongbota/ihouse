@@ -124,6 +124,7 @@
           z-index: 1;
           background-position: center;
          user-select: none;
+         top: 3px;
         }
       
         
@@ -135,7 +136,7 @@
           transition: all .5s ease;
           &.active {
             opacity: 1;
-            width: 432px;
+            width: 100%;
             border-bottom: solid 1px #fff;
           }
           input {
@@ -144,8 +145,9 @@
             font-size: 14px;
             padding: 0 0 11px 25px;
             color: #fff !important;
+            height: 42px;
             @media screen and (min-width: 1024px){
-                padding: 2px 0 5px 30px;
+                padding: 2px 0 5px 40px;
             }
             &::-webkit-input-placeholder {
                 color: #fff;

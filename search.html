@@ -7,6 +7,7 @@
     <link href="statics/css/style.css" rel="stylesheet" />
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.1/jquery.min.js" type="text/javascript"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.8.1/slick.min.js" type="text/javascript"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.0.1/js/bootstrap.min.js" type="text/javascript"></script>
     <script src="statics/js/js_custom.js" type="text/javascript"></script>
 </head>
 <body>
@@ -39,25 +40,25 @@
                         </a>
                         <div class="header-right-mb">
                             <div class="row align-items-center">
-                                <div class="col-xl-4 col-lg-4">
+                                <div class="col-xl-6 col-lg-6">
                                     <div class="header-search">
                                         <button class="header-search-toggle" type="button">
                                         Search
                                         </button>
                                         <div class="header-search-wrapper">
-                                        <div class="header-search-content">
-                                            <div role="search" class="block block-search block-search-form-block">
-                                                <form class="search-block-form" action="search.html" method="get" id="search-block-form" accept-charset="UTF-8">
-                                                    <div class="input-group">
-                                                        <input class="form-control" placeholder="Search" type="search"  />                                    
-                                                    </div>
-                                                </form>
+                                            <div class="header-search-content">
+                                                <div role="search" class="block block-search block-search-form-block">
+                                                    <form class="search-block-form" action="search.html" method="get" id="search-block-form" accept-charset="UTF-8">
+                                                        <div class="input-group">
+                                                            <input class="form-control" placeholder="Search" type="search"  />                                    
+                                                        </div>
+                                                    </form>
+                                                </div>
                                             </div>
-                                        </div>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-xl-8 col-lg-8">
+                                <div class="col-xl-6 col-lg-6">
                                     <div class="header-menu-list">
                                         <ul class="header-nav-list">
                                             <li class="nav-list-item">
@@ -102,6 +103,187 @@
         </div>
     </header>
     <div class="header-top-gradient"></div>
+    <div class="search-page">
+        <div class="view-filters">
+            <form class="views-exposed-form" action="search.html" method="get" accept-charset="UTF-8">
+               <div class="form-inline clearfix">
+                  <div class="form-item">
+                     <input title="Search keywords" class="form-text form-control" type="text" id="edit-keys" name="keys" value="" size="15" maxlength="128">
+                  </div>
+                  <div class="form-actions" id="edit-actions">
+                    <button class="form-submit" type="submit" id="edit-submit-node-functions" value="Apply">Apply</button>
+                  </div>
+               </div>
+            </form>
+            <div class="view-empty">
+                Select any filter and click on Apply to see results
+            </div>
+         </div>
+        <nav>
+            <div class="nav nav-tabs" id="nav-tab" role="tablist">
+                <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#projects" type="button" role="tab">
+                <span class="st-count">13</span> Dự án
+                </button>
+                <button class="nav-link" data-bs-toggle="tab" data-bs-target="#articles" type="button" role="tab">
+                <span class="st-count">14</span> Bài viết
+                </button>
+            </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+            <div class="tab-pane fade show active" id="projects" role="tabpanel">
+                <ul class="search-list">
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/01.jpg" alt="Biệt thự MMs002" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Biệt thự MMs002</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                        </li>
+                        <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/02.jpg" alt="Biệt thự Vinhomes Riverside" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Biệt thự Vinhomes Riverside</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                        </li>
+                        <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/03.jpg" alt="Nhà phố" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Nhà phố</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                        </li>
+                        <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/04.jpg" alt="Nhà cải tạo" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Nhà cải tạo</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                        </li>
+                        <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/05.jpg" alt="Căn hộ penthouse ở Ecopark" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Căn hộ penthouse ở Ecopark</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                        </li>
+                        <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/06.jpg" alt="Căn hộ duplex Mỹ Đình" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Căn hộ duplex Mỹ Đình</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                        </li>
+                </ul>
+            </div>
+            <div class="tab-pane fade" id="articles" role="tabpanel">
+                <ul class="search-list">
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/MDF-02.jpg" alt="MDF, HDF, VÁN DĂM, GỖ DÁN" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">MDF, HDF, VÁN DĂM, GỖ DÁN</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                    </li>
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/Laminate-03.jpg" alt="Vật liệu hoàn thiện – LAMINATE" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Vật liệu hoàn thiện – LAMINATE</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                    </li>
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/01_7.jpg" alt="Vật liệu hoàn thiện - VENEER" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Vật liệu hoàn thiện - VENEER</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                    </li>
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/Melamin-2.jpg" alt="Vật liệu hoàn thiện - MELAMINE" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Vật liệu hoàn thiện - MELAMINE</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                    </li>
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/SMC-6_1.jpg" alt="Diễn đàn DN nhỏ và vừa ASEAN" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Diễn đàn DN nhỏ và vừa ASEAN</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                    </li>
+                    <li class="search-list-item">
+                        <div class="search-list-colour"></div>
+                            <a href="/" class="search-list-content">
+                                <img src="statics/img/Logo-3_1.jpg" alt="Tuyển Kiến trúc sư 5.2015" class="img-fluid" />
+                                <div class="search-list-header">
+                                    <div class="search-list-wrapper">                           
+                                        <span class="search-list-title">Tuyển Kiến trúc sư 5.2015</span>
+                                    </div>
+                                </div>
+                            </a>
+                        <div class="search-list-spacer"></div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
 </div>
 </body>
 </html>
