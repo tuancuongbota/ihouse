@@ -48,51 +48,72 @@ $(document).ready(function(){
   function stopScaleAnimation() {
     clearInterval(intervalId);
   }
-  $('.language_btn').on('click', function() {
-    $('.language_overlay_content').slideToggle(300);
-    $('.language_overlay_content').toggleClass('active');
-    $('.language_chevron').toggleClass('active');
-  });
-  
-  $('.language_btn').on('click', function() {
-    if ($('.language_overlay_content').hasClass('active')) {
-      $('.language_overlay_content').css({
-        'opacity': '1',
-        'transform': 'matrix(1, 0, 0, 1, 0, 0)',
-        'display': 'block'
-      });
-      $('.language_chevron').css({
-        'transform-origin': 'center 40% 0px',
-        'transform': 'matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)'
-      });
-    } else {
-      $('.language_overlay_content').css({
-        'opacity': '0',
-        'transform': 'matrix(0.75, 0, 0, 0.75, 0, 30)',
-        'display': 'none'
-      });
-      $('.language_chevron').css({
-        'transform-origin': 'center 40% 0px',
-        'transform': 'matrix(1, 0, 0, 1, 0, 0)'
+  if($('.language_btn').length) {
+    $('.language_btn').on('click', function() {
+      $('.language_overlay_content').slideToggle(300);
+      $('.language_overlay_content').toggleClass('active');
+      $('.language_chevron').toggleClass('active');
+    });
+  }
+  if($('.language_btn').length) {
+    $('.language_btn').on('click', function() {
+      if ($('.language_overlay_content').hasClass('active')) {
+        $('.language_overlay_content').css({
+          'opacity': '1',
+          'transform': 'matrix(1, 0, 0, 1, 0, 0)',
+          'display': 'block'
+        });
+        $('.language_chevron').css({
+          'transform-origin': 'center 40% 0px',
+          'transform': 'matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)'
+        });
+      } else {
+        $('.language_overlay_content').css({
+          'opacity': '0',
+          'transform': 'matrix(0.75, 0, 0, 0.75, 0, 30)',
+          'display': 'none'
+        });
+        $('.language_chevron').css({
+          'transform-origin': 'center 40% 0px',
+          'transform': 'matrix(1, 0, 0, 1, 0, 0)'
+        });
+      }
+    });
+  }
+  if($('.header-search-toggle').length) {
+    $('.header-search-toggle').on('click', function() {
+      $('.header-search-wrapper').toggleClass('active');
+      $('body').toggleClass('search_active');
+      $('.search-gradient').toggleClass('active');
+    });
+  }
+  if($('.search-gradient').length) {
+    $('.search-gradient').on('click', function() {
+      $('.header-search-wrapper').removeClass('active');
+      $('body').removeClass('search_active');
+      $('.search-gradient').removeClass('active');
+    });
+  }
+if($('.header-nav-toggle').length) {
+    $('.header-nav-toggle').on('click', function() {
+      $('.header-toggle-content').toggleClass('open');
+      $('.header-right-mb').toggleClass('active');
+      $('.mb-gradient').toggleClass('active');
+      $('body').toggleClass('body-gradient');
+      $('.search-gradient').removeClass('active');
+      $('body').removeClass('search_active');
+    });
+}
+if($('.nav-fixed').length) {
+      var num = 100;  
+      $(window).bind('scroll', function () {
+          if ($(window).scrollTop() > num) {   
+              $('.nav-fixed').addClass('fixed');
+          }
+          else
+          {
+              $('.nav-fixed').removeClass('fixed');
+          }
       });
     }
-  });
-  $('.header-search-toggle').on('click', function() {
-    $('.header-search-wrapper').toggleClass('active');
-    $('body').toggleClass('search_active');
-    $('.search-gradient').toggleClass('active');
-  });
-  $('.search-gradient').on('click', function() {
-    $('.header-search-wrapper').removeClass('active');
-    $('body').removeClass('search_active');
-    $('.search-gradient').removeClass('active');
-  });
-  $('.header-nav-toggle').on('click', function() {
-    $('.header-toggle-content').toggleClass('open');
-    $('.header-right-mb').toggleClass('active');
-    $('.mb-gradient').toggleClass('active');
-    $('body').toggleClass('body-gradient');
-    $('.search-gradient').removeClass('active');
-    $('body').removeClass('search_active');
-  });
 });

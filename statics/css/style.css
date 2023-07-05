@@ -12837,6 +12837,8 @@ body.search_active .header-menu-list { -webkit-transform: translateY(-100vh); tr
 img { max-width: 100%; }
 
 .search-page { padding-top: 90px; background: #000; height: 100vh; }
+.search-page .nav-fixed.fixed { background: #000; position: fixed; width: 100%; z-index: 99999; top: 0; -webkit-transition: height .4ms; transition: height .4ms; }
+.search-page .nav-fixed.fixed .nav-tabs .nav-link { padding-bottom: 30px; padding-top: 30px; }
 .search-page .view-filters { margin-bottom: 15px; }
 @media screen and (min-width: 769px) { .search-page .view-filters { width: 30%; display: block; margin: 0 auto; padding: 0; position: relative; } }
 .search-page .views-exposed-form { border-bottom: 1px solid #fff; padding: 8px 0; position: relative; }
