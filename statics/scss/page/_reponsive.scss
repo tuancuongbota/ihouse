@@ -46,11 +46,12 @@
             }
         }
         .header-search {
-          margin: 0 auto 35px;
-          float: right;
+          margin: 0 0 35px;
           opacity: 1;
           transform: matrix(1, 0, 0, 1, 0, 0);
           width: 30px;
+          margin-left: auto;
+          text-align: right;
         }
         .header-search-wrapper {
             &.active {
