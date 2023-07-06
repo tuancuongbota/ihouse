@@ -30,6 +30,9 @@
         }
     }
     &-right-mb {
+        display: flex;
+        align-items: center;
+        flex-wrap: wrap;
         @media screen and (max-width: 1024px) {
             display: inline-block;
             font-size: 0;
