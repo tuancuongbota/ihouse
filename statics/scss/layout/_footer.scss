@@ -57,7 +57,6 @@
             opacity: 0;
             transform: matrix(0.75, 0, 0, 0.75, 0, 30);
             display: none;
-            transition: all .5s ease;
           
             .language_list li {
               line-height: 1;
@@ -134,9 +133,6 @@
           top: 14px;
           right: 15px;
           background: url(../img/chevron-down-white.svg?v=2666) no-repeat center (center / 100%);
-          transform-origin: center 40% 0px;
-          transform: matrix(1, 0, 0, 1, 0, 0);
-          transition: all .5s ease;
         }
       }
       

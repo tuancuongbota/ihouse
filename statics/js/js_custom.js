@@ -48,38 +48,7 @@ $(document).ready(function(){
   function stopScaleAnimation() {
     clearInterval(intervalId);
   }
-  if($('.language_btn').length) {
-    $('.language_btn').on('click', function() {
-      $('.language_overlay_content').slideToggle(300);
-      $('.language_overlay_content').toggleClass('active');
-      $('.language_chevron').toggleClass('active');
-    });
-  }
-  if($('.language_btn').length) {
-    $('.language_btn').on('click', function() {
-      if ($('.language_overlay_content').hasClass('active')) {
-        $('.language_overlay_content').css({
-          'opacity': '1',
-          'transform': 'matrix(1, 0, 0, 1, 0, 0)',
-          'display': 'block'
-        });
-        $('.language_chevron').css({
-          'transform-origin': 'center 40% 0px',
-          'transform': 'matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)'
-        });
-      } else {
-        $('.language_overlay_content').css({
-          'opacity': '0',
-          'transform': 'matrix(0.75, 0, 0, 0.75, 0, 30)',
-          'display': 'none'
-        });
-        $('.language_chevron').css({
-          'transform-origin': 'center 40% 0px',
-          'transform': 'matrix(1, 0, 0, 1, 0, 0)'
-        });
-      }
-    });
-  }
+
   if($('.header-search-toggle').length) {
     $('.header-search-toggle').on('click', function() {
       $('.header-search-wrapper').toggleClass('active');
@@ -94,6 +63,46 @@ $(document).ready(function(){
       $('.search-gradient').removeClass('active');
     });
   }
+  $(".language_btn").click(function () {
+    $(".language_overlay_content").toggleClass("active");
+    $(".language_chevron").toggleClass("active");
+
+    if ($(".language_overlay_content").hasClass("active")) {
+      // Hiệu ứng hiển thị từ dưới lên trên
+      gsap.to(".language_overlay_content", {
+        display: "block",
+        opacity: 1,
+        transform: "matrix(1, 0, 0, 1, 0, 0)",
+        duration: 0.5,
+        ease: "power2.out"
+      });
+
+      gsap.to(".language_chevron", {
+        transformOrigin: "center 40% 0px",
+        transform: "matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)",
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    } else {
+      // Hiệu ứng ẩn từ trên xuống dưới
+      gsap.to(".language_overlay_content", {
+        opacity: 0,
+        transform: "matrix(0.75, 0, 0, 0.75, 0, 30)",
+        duration: 0.5,
+        ease: "power2.out",
+        onComplete: function () {
+          $(".language_overlay_content").css("display", "none");
+        }
+      });
+
+      gsap.to(".language_chevron", {
+        transformOrigin: "center 40% 0px",
+        transform: "matrix(1, 0, 0, 1, 0, 0)",
+        duration: 0.5,
+        ease: "power2.out"
+      });
+    }
+  });
 if($('.header-nav-toggle').length) {
     $('.header-nav-toggle').on('click', function() {
       $('.header-toggle-content').toggleClass('open');
