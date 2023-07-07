@@ -12779,6 +12779,7 @@ ul li, ol li { list-style: none; }
 .header-menu-list { position: relative; }
 .header-nav-list { display: -webkit-box; display: -ms-flexbox; display: flex; -webkit-box-pack: end; -ms-flex-pack: end; justify-content: flex-end; }
 .header-nav-list li { padding: 0 15px; line-height: 1; }
+@media screen and (min-width: 1024px) { .header-nav-list li.nav-list-item.nav-list-language-selector { display: none; } }
 .header-nav-list li a { -webkit-transition: opacity .1s ease-in-out; transition: opacity .1s ease-in-out; text-decoration: none; font-weight: 400; display: block; color: #fff; letter-spacing: .5px; font-size: 14px; opacity: .7; }
 .header-nav-list li a:hover { opacity: 1; }
 

@@ -168,6 +168,13 @@
         li {
           padding: 0 15px;
           line-height: 1;
+          &.nav-list-item{
+            &.nav-list-language-selector{
+              @media screen and (min-width: 1024px){
+                display: none;
+              }
+            }
+          }
       
           a {
             &:hover {
