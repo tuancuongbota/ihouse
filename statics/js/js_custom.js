@@ -104,6 +104,13 @@ if($('.header-nav-toggle').length) {
       $('body').removeClass('search_active');
     });
 }
+if($('.language_mb_btn').length) {
+  $('.language_mb_btn').on('click', function() {
+    $(this).toggleClass('active');
+    $('.language_mb').toggleClass('is-open');
+    $('.language_mb_list li, .language_mb_list li a').css('opacity', '0').animate({ opacity: 1 }, 500);
+  });
+}
 if($('.nav-fixed').length) {
       var num = 100;  
       $(window).bind('scroll', function () {
