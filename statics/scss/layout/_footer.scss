@@ -45,6 +45,179 @@
     }
     
   }
+  &-bottom-custom {
+    border-top: 1px solid #ebebeb;
+    padding: 20px 0;
+    margin: 0 48px;
+    .container{
+      padding: 0;
+    }
+    .copyright {
+      font-size: 12px;
+      line-height: 30px;
+      font-weight: 300;
+      letter-spacing: .5px;
+    }
+    
+    .footer-bottom-right {
+      -webkit-align-items: center;
+      align-items: center;
+      display: -webkit-flex;
+      display: flex;
+      justify-content: flex-end;
+    
+      .social-media-links-platforms li {
+        display: inline-block;
+        text-align: center;
+        padding: 2px 5px;
+    
+        a {
+          font-size: 16px;
+          color: #4d4d4d;
+        }
+      }
+      .language {
+        display: inline-block;
+        margin-left: 30px;
+        position: relative;
+      
+        .language_btn {
+          cursor: pointer;
+          font-family: "Open Sans",Helvetica,Arial;
+          min-width: 80px;
+          min-height: 32px;
+          height: auto;
+          text-align: center;
+          font-size: 13px;
+          border: none;
+          border-radius: 20px;
+          color: #000;
+          font-weight: 400;
+          letter-spacing: .5px;
+          line-height: 19px;
+          padding: 7px 18px;
+          margin: 0;
+          text-decoration: none;
+          cursor: pointer;
+          padding-left: 32px;
+          position: relative;
+          display: flex;
+          align-items: center;
+          padding-right: 30px;
+          background-color: transparent;
+      
+          &::before {
+            content: '';
+            display: block;
+            overflow: hidden;
+            position: absolute;
+            height: 15px;
+            left: 9px;
+            top: 50%;
+            -webkit-transform: translateY(-50%);
+            -ms-transform: translateY(-50%);
+            transform: translateY(-50%);
+            width: 15px;
+            background: url(../img/language-black.svg) no-repeat center (center / 100%);
+          }
+      
+          > span {
+            opacity: .7;
+            position: relative;
+          }
+        }
+      
+        .language_chevron {
+          display: inline;
+          height: 5px;
+          width: 7px;
+          position: absolute;
+          top: 0;
+          right: -7px;
+          background: url(../img/chevron-down-black.svg) no-repeat center (center / 100%);
+          opacity: .7;
+        }
+      }
+      
+      .language_overlay_content {
+        bottom: 42px;
+        display: none;
+        position: absolute;
+        right: 0;
+        width: 100%;
+        background-color: #fff;
+        border: solid 1px #f5f5f5;
+        border-radius: 8px;
+      
+        .language_list li {
+          a {
+            border-radius: 8px 8px 0 0;
+            opacity: 1;
+            font-weight: 600;
+            color: #000;
+            font-size: 13px;
+            display: block;
+            padding: 14px 20px 15px;
+            text-decoration: none;
+          }
+      
+          &.active {
+            background: #f5f5f5;
+          }
+      
+          &:not(.active) a {
+            opacity: 0.7 !important;
+            font-weight: 400 !important;
+          }
+      
+          &:hover a {
+            background: #f5f5f5;
+          }
+      
+          line-height: 1;
+        }
+      }
+      
+    }
+    
+}
+  &-custom {
+    border-top: 1px solid #ebebeb;
+    padding: 30px 0 0;
+    @media screen and (min-width: 1024px){
+      padding: 50px 0 0;
+    }
+    .footer-title {
+      font-size: 12px;
+      font-weight: 600;
+      line-height: 22px;
+      text-decoration: none;
+      margin-bottom: 0;
+      @media screen and (min-width: 768px){
+        font-size: 14px;
+        margin-bottom: 5px;
+      }
+  }
+  .footer-links li a {
+    font-size: 12px;
+    font-weight: 400;
+    line-height: 22px;
+    text-decoration: none;
+    opacity: .7;
+    color: #000;
+    &:hover {
+      opacity: 1;
+  }
+        @media screen and (min-width: 1024px){
+          margin-bottom: 7px;
+        }
+        @media screen and (min-width: 768px){
+          font-size: 12px;
+          line-height: 34px;
+        }
+      }
+    }
+  
     .language {
        position: relative;
         &_overlay_content {
