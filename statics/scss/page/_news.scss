@@ -9,6 +9,10 @@
 }
 .block-news{
     .container{
+        @media screen and (min-width: 768px){
+            max-width: 1466px;
+            padding: 0 31px;
+        }
         @media screen and (max-width: 767px){
             padding: 0;
         }

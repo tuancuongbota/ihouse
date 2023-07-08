@@ -13006,6 +13006,7 @@ img { max-width: 100%; }
 .block-title h2 { padding: 10px 30px 20px; margin-bottom: 0; font-size: 16px; }
 @media screen and (min-width: 768px) { .block-title h2 { padding: 50px 0 20px; font-size: 21px; } }
 
+@media screen and (min-width: 768px) { .block-news .container { max-width: 1466px; padding: 0 31px; } }
 @media screen and (max-width: 767px) { .block-news .container { padding: 0; } }
 .block-news .block-news-content { margin: 0 -19px; }
 .block-news .slick-dots { display: -webkit-box; display: -ms-flexbox; display: flex; padding: 20px 0 40px; -webkit-box-pack: center; -ms-flex-pack: center; justify-content: center; z-index: 200; }
