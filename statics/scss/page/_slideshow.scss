@@ -6,7 +6,6 @@
       position: absolute;
       bottom: 120px;
       pointer-events: none;
-      overflow: hidden;
       &::after{
         content: "";
         clear: both;
@@ -20,6 +19,9 @@
         padding: 0;
         position: relative;
         height: 100%;
+        @media screen and (min-width: 768px) {
+          margin:0 0 0 48px
+        }
         li {
           line-height: 1;
           padding-left: 0;
@@ -35,6 +37,10 @@
           width: calc(100% - 50px);
           padding-bottom: 2px;
           pointer-events:none;
+          opacity: 0;
+          &.active{
+            opacity: 1;
+          }
           @media screen and (min-width: 768px) {
             align-items: flex-start;
             text-align: left;
@@ -46,6 +52,7 @@
             padding-top: 90px;
             margin-bottom: 0;
             position: relative;
+            left: -50%;
             @media screen and (min-width: 1024px) {
               padding-top:120px;
               min-height: 105px;

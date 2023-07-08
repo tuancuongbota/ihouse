@@ -38,7 +38,7 @@ $(document).ready(function(){
       $('.slide_labels_titles li').removeClass('active');
       var $currentSlide = $('#home-title-slide' + slideIndex);
       $currentSlide.addClass('active');
-      TweenMax.from($currentSlide, 1, { opacity: 0, scale: 0.5 });
+      TweenMax.from($currentSlide, 1, { x: '100%' });
     }
     function deactivateSlide(slideIndex) {
       $('#home-title-slide' + slideIndex).removeClass('active');
