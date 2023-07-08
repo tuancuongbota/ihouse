@@ -12858,6 +12858,8 @@ body { background: #fff; color: #000; font-family: "Open Sans",Helvetica,Arial; 
 body.search_active .header-search { width: 40%; }
 body.search_active .header-menu-list { -webkit-transform: translateY(-100vh); transform: translateY(-100vh); }
 
+.wrapper { overflow: hidden; position: relative; }
+
 img { max-width: 100%; }
 
 .info-page { overflow: hidden; padding-top: 134px; }
