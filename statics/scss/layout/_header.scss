@@ -155,6 +155,15 @@
             &::-webkit-input-placeholder {
                 color: #fff;
             }
+            &::-moz-placeholder {
+              color: #fff;
+          }
+          &:-ms-input-placeholder {
+            color: #fff;
+          }
+          &:-moz-placeholder {
+            color: #fff;
+          }
         }
         }
       }

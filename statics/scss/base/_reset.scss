@@ -16,7 +16,10 @@ body {
 a,button,div,em,h1,h2,h3,h4,h5,h6,input,p,span {
   -webkit-font-smoothing: antialiased;
 }
-
+a:hover, a:focus {
+  color: #23527c;
+  text-decoration: underline;
+}
 ul,ol{
     margin: 0;
     padding: 0;
@@ -26,7 +29,6 @@ ul,ol{
 }
 @media (min-width: 1200px){
     .container{
-        max-width: 100%;
         padding-left: 48px;
         padding-right: 48px;
     }
@@ -128,6 +130,109 @@ ul,ol{
     font-family: "Font Awesome 6 Brands";
     font-weight: 400
   }
+
+.fp-h1,h1 {
+  font-size: 21px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  line-height: 28px;
+  margin-bottom: 16px
+}
+
+@media screen and (min-width: 768px) {
+  .fp-h1,h1 {
+      font-size:33px;
+      line-height: 40px;
+      margin-bottom: 20px
+  }
+}
+
+.fp-h2,h2 {
+  font-size: 16px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  line-height: 24px;
+  margin-bottom: 16px
+}
+
+@media screen and (min-width: 768px) {
+  .fp-h2,h2 {
+      font-size:21px;
+      line-height: 28px;
+      margin-bottom: 20px
+  }
+}
+
+.fp-h3,h3 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  line-height: 24px;
+  margin-bottom: 16px
+}
+
+@media screen and (min-width: 768px) {
+  .fp-h3,h3 {
+      font-size:19px;
+      line-height: 26px;
+      margin-bottom: 20px
+  }
+}
+
+.fp-h4,h4 {
+  font-size: 14px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  line-height: 22px;
+  margin-bottom: 16px
+}
+
+@media screen and (min-width: 768px) {
+  .fp-h4,h4 {
+      font-size:16px;
+      line-height: 24px;
+      margin-bottom: 20px
+  }
+}
+
+.fp-h5,h5 {
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: .5px;
+  line-height: 20px;
+  margin-bottom: 16px
+}
+
+@media screen and (min-width: 768px) {
+  .fp-h5,h5 {
+      font-size:12px;
+      line-height: 20px;
+      margin-bottom: 20px
+  }
+}
+
+  .fp-h6, h6{
+    font-size: 12px;
+    font-weight: 400;
+    letter-spacing: .5px;
+    line-height: 26px;
+    margin-bottom: 16px;
+    @media screen and (min-width: 768px){
+      font-size: 12px;
+      line-height: 26px;
+      margin-bottom: 20px;
+    }
+  }
+  .fp-p, .fp-td, .fp-th, p, td, th {
+    font-size: 14px;
+    font-weight: 300;
+    letter-spacing: .5px;
+    line-height: 26px;
+    margin-bottom: 30px;
+}
+.form-group:last-child, .panel:last-child, .popover ol:last-child, .popover ul:last-child, p:last-child {
+  margin-bottom: 0;
+}
   .margin-bottom-20{
     margin-bottom: 20px;
   }

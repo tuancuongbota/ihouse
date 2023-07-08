@@ -282,25 +282,23 @@
             }
         }
       }
-      
-      @-webkit-keyframes spinner {
-        0% {
-          stroke-dashoffset: 125.6;
-        }
-      
-        to {
-          stroke-dashoffset: 0;
-        }
-      }
-      
-      @keyframes spinner {
-        0% {
-          stroke-dashoffset: 125.6;
-        }
-      
-        to {
-          stroke-dashoffset: 0;
-        }
-      }
+  }
+  @-webkit-keyframes spinner {
+    0% {
+      stroke-dashoffset: 125.6;
+    }
+  
+    to {
+      stroke-dashoffset: 0;
+    }
   }
   
+  @keyframes spinner {
+    0% {
+      stroke-dashoffset: 125.6;
+    }
+  
+    to {
+      stroke-dashoffset: 0;
+    }
+  }

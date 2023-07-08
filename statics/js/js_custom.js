@@ -205,4 +205,87 @@ if($('.nav-fixed').length) {
     });
   }
 }
+if ($('.info-detail-text').length) {
+  function applyGsapAnimation(element) {
+    gsap.from(element, { opacity: 0, y: 50, duration: 1 });
+  }
+
+  applyGsapAnimation($('.info-detail-text'));
+  $('.fp-share-toggle').click(function() {
+    var shareLinks = $('.fp-share-content ul li a');
+    if (shareLinks.css('display') === 'none') {
+      shareLinks.each(function(index) {
+        var shareLink = $(this);
+        gsap.fromTo(
+          shareLink,
+          { opacity: 0, display: 'none' },
+          { opacity: 1, display: 'block', duration: 1, delay: index * 0.2 }
+        );
+      });
+    } else {
+      shareLinks.each(function(index) {
+        var shareLink = $(this);
+        gsap.to(shareLink, { opacity: 0, display: 'none', duration: 1, delay: index * 0.2 });
+      });
+    }
+  });
+}
+if ($('.slick-news-list').length) {
+  $('.slick-news-list').slick({
+    dots: true,
+    infinite: true,
+    speed: 300,
+    slidesToShow: 2,
+    slidesToScroll: 2,
+    arrows: false,
+    responsive: [
+      {
+        breakpoint: 1024,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2,
+          infinite: true,
+          dots: true
+        }
+      },
+      {
+        breakpoint: 600,
+        settings: {
+          slidesToShow: 2,
+          slidesToScroll: 2
+        }
+      },
+      {
+        breakpoint: 480,
+        settings: {
+          slidesToShow: 1,
+          slidesToScroll: 1
+        }
+      }
+    ],
+    adaptiveHeight: false,
+    autoplay: true,
+    autoplaySpeed: 8000,
+    customPaging: (_slider, i) => '<div id="dot' + (i + 1) + '"><svg viewBox="0 0 40 40" class="spinner" width="20" height="20" style="--duration: 15.046667s;"><circle cx="20" cy="20" r="11" class="outer" opacity="0.5"></circle><circle cx="20" cy="20" r="5" class="inner" opacity="0.5"></circle></svg></div>'
+  });
+}
+if ($('.header-detail-page').length) {
+  // scroll menu
+  const nav = document.querySelector('.header-detail-page');
+  let prevScrollpos = window.pageYOffset;
+  
+  window.onscroll = function() {
+    const currentScrollPos = window.pageYOffset;
+    if (prevScrollpos < currentScrollPos && currentScrollPos > 75) {
+      nav.style.top = '-75px';
+      $('body').addClass('header-scroll-open'); 
+    } else {
+      nav.style.top = '0';
+      if ($('.header').offset().top <= 0) {
+        $('body').removeClass('header-scroll-open');
+      }
+    }
+    prevScrollpos = currentScrollPos;
+  };
+}
 });
