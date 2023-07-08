@@ -55,6 +55,18 @@ body{
           }
           &:hover{
             background: #000;
+            .header-pulse{
+                #pulse{
+                    stroke: #fff;
+                }
+               
+                &::after {
+                    background-color: #fff;
+                }
+            }
+            .header-toggle-opened{
+                background-color: #fff;
+            }
             .logo img{
                 &:nth-child(2) {
                    display: none;
@@ -93,6 +105,18 @@ body{
               }
         }
         } 
+        .header-pulse{
+            #pulse{
+                stroke: #000;
+            }
+           
+            &::after {
+                background-color: #000;
+            }
+        }
+        .header-toggle-opened{
+            background-color: #000;
+        }
       }
       
 }
