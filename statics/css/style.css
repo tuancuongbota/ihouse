@@ -12745,7 +12745,7 @@ a:hover, a:focus { color: #23527c; text-decoration: underline; }
 ul, ol { margin: 0; padding: 0; }
 ul li, ol li { list-style: none; }
 
-@media (min-width: 1200px) { .container { padding-left: 48px; padding-right: 48px; } }
+@media (min-width: 1200px) { .container { padding-left: 48px; padding-right: 48px; max-width: 100%; } }
 @-webkit-keyframes loaderAnimation { 0% { -webkit-transform: rotate(0); transform: rotate(0); }
   100% { -webkit-transform: rotate(360deg); transform: rotate(360deg); } }
 @keyframes loaderAnimation { 0% { -webkit-transform: rotate(0); transform: rotate(0); }
