@@ -1,54 +1,59 @@
 $(document).ready(function(){
-  var intervalId;
+  if($('.slick-slideshow').length) {
+      $('.slick-slideshow').on('init', function(event, slick) {
+        var $slides = $(slick.$slides);
+        var $currentSlide = $slides.eq(slick.currentSlide);
+        applyAnimation($currentSlide, false);
+        activateSlide(slick.currentSlide);
+    });
 
-  $('.slick-slideshow').on('init', function(event, slick) {
-    startScaleAnimation(slick.currentSlide);
-  });
+    $('.slick-slideshow').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+        var $slides = $(slick.$slides);
+        var $currentSlide = $slides.eq(currentSlide);
+        applyAnimation($currentSlide, true);
+        var $nextSlide = $slides.eq(nextSlide);
+        applyAnimation($nextSlide, false);
+        deactivateSlide(currentSlide);
+        activateSlide(nextSlide);
+    });
 
-  $('.slick-slideshow').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-    stopScaleAnimation();
-  });
+    function applyAnimation($slide, reset) {
+        var scaleStart = reset ? 1.04901 : 1.01202;
+        var scaleEnd = reset ? 1.01202 : 1.04901;
 
-  $('.slick-slideshow').on('afterChange', function(event, slick, currentSlide) {
-    startScaleAnimation(currentSlide);
-  });
+        $slide.css({
+            'transform': 'translate3d(0px, 0px, 0px) scale(' + scaleStart + ')',
+            'transition': 'none'
+        });
 
-  $('.slick-slideshow').slick({
-    dots: true,
-    infinite: true,
-    speed: 300,
-    slidesToShow: 1,
-    adaptiveHeight: false,
-    autoplay: true,
-    autoplaySpeed: 8000,
-    customPaging: (_slider, i) => '<div id="dot' + (i + 1) + '"><svg viewBox="0 0 40 40" class="spinner" width="20" height="20" style="--duration: 15.046667s;"><circle cx="20" cy="20" r="12" class="outer" opacity="0.5"></circle><circle cx="20" cy="20" r="5.5" class="inner" opacity="0.5"></circle></svg></div>'
-  });
-
-  function startScaleAnimation(slideIndex) {
-    var slideElements = $('.slick-slide');
-    var scaleValue = 1; // Giá trị scale ban đầu
-    var scaleFactor = 0.0001; // Hệ số vận tốc scale
-
-    intervalId = setInterval(function() {
-      scaleValue += scaleFactor;
-      slideElements.each(function(index, element) {
-        if (index === slideIndex) {
-          $(element).css('transform', 'translate3d(0px, 0px, 0px) scale(' + scaleValue + ', ' + scaleValue + ')');
-        } else {
-          $(element).css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
-        }
-      });
-
-      if (scaleValue >= 1.01668) {
-        stopScaleAnimation();
-      }
-    }, 10);
+        // Thời gian chờ trước khi áp dụng hiệu ứng
+        setTimeout(function() {
+            $slide.css({
+                'transform': 'translate3d(0px, 0px, 0px) scale(' + scaleEnd + ')',
+                'transition': 'transform 8s ease-in-out'
+            });
+        }, 100);
+    }
+    function activateSlide(slideIndex) {
+      $('.slide_labels_titles li').removeClass('active');
+      var $currentSlide = $('#home-title-slide' + slideIndex);
+      $currentSlide.addClass('active');
+      TweenMax.from($currentSlide, 1, { opacity: 0, scale: 0.5 });
+    }
+    function deactivateSlide(slideIndex) {
+      $('#home-title-slide' + slideIndex).removeClass('active');
+    }
+    $('.slick-slideshow').slick({
+        dots: true,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        adaptiveHeight: false,
+        autoplay: true,
+        autoplaySpeed: 8000,
+        customPaging: (_slider, i) => '<div id="dot' + (i + 1) + '"><svg viewBox="0 0 40 40" class="spinner" width="20" height="20" style="--duration: 15.046667s;"><circle cx="20" cy="20" r="12" class="outer" opacity="0.5"></circle><circle cx="20" cy="20" r="5.5" class="inner" opacity="0.5"></circle></svg></div>'
+    });
   }
-
-  function stopScaleAnimation() {
-    clearInterval(intervalId);
-  }
-
   if($('.header-search-toggle').length) {
     $('.header-search-toggle').on('click', function() {
       $('.header-search-wrapper').toggleClass('active');
@@ -132,4 +137,69 @@ if($('.nav-fixed').length) {
           }
       });
     }
+  if($('.fp-grid-item').length) {
+    var gridItems = $(".fp-grid-item");
+    var delay = 0;
+    gridItems.each(function(index) {
+      var currentItem = $(this);
+      setTimeout(function() {
+        setTimeout(function() {
+          currentItem.removeClass("is-hidden");
+          setTimeout(function() {
+            currentItem.find("img").removeClass("is-blurred");
+            currentItem.addClass("is-loaded");
+          }, 1200);
+        }, 1000);
+      }, delay);
+  
+      delay += 500; // Mỗi phần tử được thực hiện sau 0.5 giây
+    });
+  }
+  if ($('.footer-list-item').length) {
+    var footerItems = $(".footer-list-item");
+    var delay = 0;
+  
+    footerItems.each(function (index) {
+      var currentItem = $(this);
+      setTimeout(function () {
+        currentItem.css({
+          "opacity": "1",
+          "transform": "matrix(1, 0, 0, 1, 0, 0)"
+        });
+  
+        if (index === footerItems.length - 1) {
+          setTimeout(function () {
+            $(".footer-bottom-custom").css({
+              "opacity": "1",
+              "transform": "matrix(1, 0, 0, 1, 0, 0)"
+            });
+          }, delay + 700); 
+        }
+      }, delay);
+  
+      delay += 700; 
+    });
+  
+    footerItems.css({
+      "opacity": "0",
+      "transform": "matrix(1, 0, 0, 1, 0, 100)"
+    });
+  }
+  if ($('.footer-title').length) {
+    $(".footer-title").click(function() {
+      var footerLinks = $(this).siblings(".footer-links");
+      var chevron = $(this).find(".fp-fh-chevron");
+      var listItem = footerLinks.find("li");
+
+      if (footerLinks.css("height") === "0px") {
+          gsap.to(footerLinks, { height: "auto" });
+          gsap.fromTo(listItem, { zIndex: 0, opacity: 0, x: "10%", y: 0 }, { zIndex: 0, opacity: 1, x: 0, y: 0, delay: 0.5 });
+          gsap.to(chevron, { zIndex: 0, transformOrigin: "center 40% 0px", transform: "matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, -2.5, 0, 1)" });
+      } else {
+          gsap.to(listItem, { zIndex: 0, opacity: 0, x: "10%", y: 0 });
+          gsap.to(footerLinks, { height: "0px", delay: 0.5 });
+          gsap.to(chevron, { zIndex: 0, transformOrigin: "center 40% 0px", transform: "none" });
+      }
+  });
+}
 });

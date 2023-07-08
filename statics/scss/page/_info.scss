@@ -1,6 +1,6 @@
 .info-page {
     overflow: hidden;
-    padding-top: 74px;
+    padding-top: 134px;
     @media screen and (min-width: 1024px){
         padding-top: 138px;
     }
@@ -27,6 +27,11 @@
     line-height: 1;
     padding-left: 0;
     position: static;
+    &.is-hidden {
+      -webkit-transform: translate3d(0,35%,0);
+      transform: translate3d(0,35%,0);
+      opacity: 0;
+  }
         @media screen and (min-width: 768px){
             width: calc(50% - 0.5px);
             margin-right: 0.5px;
@@ -40,7 +45,7 @@
             left: 0;
             -webkit-filter: contrast(100%) brightness(100%) saturate(0.3) sepia(5%);
             filter: contrast(100%) brightness(100%) saturate(0.3) sepia(5%);
-            background-color: #8C8C7C;
+            background-color: #804D53;
           }
           
           .fp-grid-content {
@@ -65,6 +70,9 @@
               -webkit-transform: translate(-50%, -50%) scale(1.03);
               -ms-transform: translate(-50%, -50%) scale(1.03);
               transform: translate(-50%, -50%) scale(1.03);
+              &.is-blurred {
+                opacity: 0;
+             }
             }
           }
           &:hover .fp-grid-content img {
@@ -106,7 +114,25 @@
           .fp-grid-spacer {
             width: 100%;
             padding-top: 56.2408223201%;
+            &::after {
+                content: '';
+                display: block;
+                position: absolute;
+                overflow: hidden;
+                z-index: 75;
+                -webkit-animation: loaderAnimation .8s infinite linear;
+                animation: loaderAnimation .8s infinite linear;
+                height: 30px;
+                left: calc(50% - 15px);
+                top: calc(50% - 15px);
+                width: 30px;
+                background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink' width='30' height='30' viewBox='0 0 30 30'%3E %3Ccircle cx='15' cy='15' r='14' fill='none' stroke='%23FFFFFF' stroke-opacity='0.3' stroke-width='1px' /%3E %3Ccircle cx='15' cy='15' r='14' fill='none' stroke='%23FFFFFF' stroke-width='1px' stroke-linecap='round' stroke-dashoffset='95' stroke-dasharray='16, 47.123'/%3E %3C/svg%3E");
+            }
           }
+          &.is-loaded .fp-grid-spacer::after {
+            content: none
+        }
+        
         &::after {
             -webkit-animation: fadeIn 1.5s;
             animation: fadeIn 1.5s;
