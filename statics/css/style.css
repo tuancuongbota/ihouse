@@ -13061,7 +13061,7 @@ img { max-width: 100%; }
 .contact-page .contact-list-ul .contact-list-item .contact-email:hover { background: #d9d9d9; color: #000; }
 @media screen and (min-width: 768px) { .contact-page .fp-grid { background-color: #ebebeb; } }
 .contact-page .fp-grid .fp-grid-item { max-height: inherit; }
-@media screen and (min-width: 768px) { .contact-page .fp-grid .fp-grid-item:nth-child(odd) { margin-right: 0.5px; } }
+@media screen and (min-width: 768px) { .contact-page .fp-grid .fp-grid-item:nth-child(odd) { border-right: 1px solid #ebebeb; margin-right: 0; } }
 @media screen and (min-width: 768px) { .contact-page .fp-grid .fp-grid-item:nth-last-of-type(-n+2) { border-bottom: none; } }
 .contact-page .fp-grid .fp-grid-item::after { display: none; }
 .contact-page .fp-grid .fp-grid-item .fp-grid-colour { background-color: #958A7A; }
