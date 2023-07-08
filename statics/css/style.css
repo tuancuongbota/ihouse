@@ -12885,7 +12885,7 @@ ul li, ol li { list-style: none; }
 @keyframes spinner { 0% { stroke-dashoffset: 125.6; }
   to { stroke-dashoffset: 0; } }
 body { background: #fff; color: #000; font-family: "Open Sans",Helvetica,Arial; line-height: 1.6; letter-spacing: .5px; font-size: 16px; font-size: 16px; }
-body.search_active .header-search { width: 40%; }
+body.search_active .header-search { width: 47%; }
 body.search_active .header-menu-list { -webkit-transform: translateY(-100vh); transform: translateY(-100vh); }
 body.header-scroll-open .header { background: #fff; }
 body.header-scroll-open .header .header-nav-list li a { color: #000; }
