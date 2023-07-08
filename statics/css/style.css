@@ -12813,6 +12813,7 @@ ul li, ol li { list-style: none; }
 .mb-gradient.active { display: block; opacity: 1; }
 
 .slideshow-box { position: relative; }
+@media screen and (max-width: 1024px) { .slideshow-box { overflow: hidden; } }
 .slideshow-box .slide_labels { width: 100%; z-index: 100; position: absolute; bottom: 120px; pointer-events: none; }
 .slideshow-box .slide_labels::after { content: ""; clear: both; display: block; }
 @media screen and (min-width: 768px) { .slideshow-box .slide_labels { bottom: 76px; } }
@@ -12858,7 +12859,7 @@ body { background: #fff; color: #000; font-family: "Open Sans",Helvetica,Arial; 
 body.search_active .header-search { width: 40%; }
 body.search_active .header-menu-list { -webkit-transform: translateY(-100vh); transform: translateY(-100vh); }
 
-.wrapper { overflow: hidden; position: relative; }
+.wrapper { position: relative; }
 
 img { max-width: 100%; }
 

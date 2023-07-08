@@ -1,11 +1,15 @@
 .slideshow-box {
     position: relative;
+    @media screen and (max-width: 1024px) {
+      overflow: hidden;
+    }
     .slide_labels {
       width: 100%;
       z-index: 100;
       position: absolute;
       bottom: 120px;
       pointer-events: none;
+      
       &::after{
         content: "";
         clear: both;
@@ -93,6 +97,7 @@
         padding: 0;
         position: relative;
         background: #000;
+      
         &:hover .slick-arrow {
           opacity: 1 !important;
         }
