@@ -218,6 +218,31 @@ if ($('.info-detail-text').length) {
     }
   });
 }
+if ($('.news-detail-text').length) {
+  function applyGsapAnimation(element) {
+    gsap.from(element, { opacity: 0, y: 50, duration: 1 });
+  }
+
+  applyGsapAnimation($('.news-detail-text'));
+  $('.fp-share-toggle').click(function() {
+    var shareLinks = $('.fp-share-content ul li a');
+    if (shareLinks.css('display') === 'none') {
+      shareLinks.each(function(index) {
+        var shareLink = $(this);
+        gsap.fromTo(
+          shareLink,
+          { opacity: 0, display: 'none' },
+          { opacity: 1, display: 'block', duration: 1, delay: index * 0.2 }
+        );
+      });
+    } else {
+      shareLinks.each(function(index) {
+        var shareLink = $(this);
+        gsap.to(shareLink, { opacity: 0, display: 'none', duration: 1, delay: index * 0.2 });
+      });
+    }
+  });
+}
 if ($('.slick-news-list').length) {
   $('.slick-news-list').slick({
     dots: true,
