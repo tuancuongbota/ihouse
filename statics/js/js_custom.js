@@ -344,8 +344,6 @@ if ($('.news-page .nav-fixed').length) {
   };
 }
 if ($('.fp-trigger').length) {
-  var wDWs = $(window).width();
-    if (wDWs < 992) {
     let isOpen = false;
     $('.fp-trigger').click(function() {
         if (!isOpen) {
@@ -360,7 +358,6 @@ if ($('.fp-trigger').length) {
             isOpen = false;
         }
     });
-    }
 }
 if ($('.project-trigger').length) {
   var isAnimating = false;
