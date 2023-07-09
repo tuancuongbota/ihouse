@@ -301,6 +301,18 @@ if ($('.header-detail-page').length) {
     prevScrollpos = currentScrollPos;
   };
 }
+if($('.search-page .nav-fixed').length) {
+  var num = 100;  
+  $(window).bind('scroll', function () {
+      if ($(window).scrollTop() > num) {   
+          $('.search-page .nav-fixed').addClass('fixed');
+      }
+      else
+      {
+          $('.search-page .nav-fixed').removeClass('fixed');
+      }
+  });
+}
 if ($('.news-page .nav-fixed').length) {
   // scroll menu
   const nav = document.querySelector('.header-detail-page');

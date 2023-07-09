@@ -12795,6 +12795,7 @@ ul li, ol li { list-style: none; }
 
 .header { height: 74px; position: fixed; -webkit-transition: background-color .6s; transition: background-color .6s; width: 100%; z-index: 1000; padding: 10px 0; }
 .header:hover { background-color: #000; }
+.header.header-detail-projeck { background: #000; }
 .header .logo img:nth-child(2) { display: none; }
 @media screen and (min-width: 1024px) { .header .header-nav-toggle { display: none; } }
 @media screen and (min-width: 1024px) { .header { height: 78px; } }
