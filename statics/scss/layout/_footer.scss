@@ -208,14 +208,16 @@
       
       .language_overlay_content {
         bottom: 42px;
-        display: none;
         position: absolute;
         right: 0;
         width: 100%;
         background-color: #fff;
         border: solid 1px #f5f5f5;
         border-radius: 8px;
-      
+        opacity: 0;
+        -webkit-transform: matrix(0.75, 0, 0, 0.75, 0, 30);
+        transform: matrix(0.75, 0, 0, 0.75, 0, 30);
+        display: none;
         .language_list li {
           a {
             border-radius: 8px 8px 0 0;
