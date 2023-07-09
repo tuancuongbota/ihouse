@@ -403,4 +403,35 @@ $(".project-trigger").click(function() {
   });
 
 }
+if ($('.project-gallery').length) {
+gsap.registerPlugin(ScrollTrigger);
+ScrollTrigger.matchMedia({
+    "(min-width: 768px)": function () {
+        ScrollTrigger.create({
+            trigger: ".project-gallery",
+            start: "top center",
+            end: "bottom center",
+            onEnter: function () {
+                gsap.to(".project-pg-mask-before", { transform: "matrix(1, 0, 0, 1, 0, 0)", duration: 1 });
+                gsap.to(".project-pg-mask-after", { transform: "matrix(1, 0, 0, 1, 0, 0)", duration: 1 });
+            }
+        });
+    },
+});
+}
+if ($('.project-tabs').length) {
+  var tabButtons = document.querySelectorAll('.nav-link');
+  tabButtons.forEach(function(tabButton) {
+      tabButton.addEventListener('click', function() {
+          var targetId = this.getAttribute('data-bs-target');
+          var targetElement = document.querySelector(targetId);
+          var projectAtContent = targetElement.querySelector('.project-at-content');
+          gsap.fromTo(projectAtContent, { x: '100%' }, { x: '0%', duration: 0.5 });
+          var otherProjectAtContents = document.querySelectorAll('.project-at-content:not(' + targetId + ' .project-at-content)');
+          otherProjectAtContents.forEach(function(content) {
+              gsap.set(content, { x: '100%' });
+          });
+      });
+  });
+  }
 });

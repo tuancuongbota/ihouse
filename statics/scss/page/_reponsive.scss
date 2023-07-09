@@ -238,3 +238,13 @@
       }
       
 }
+@media screen and (max-width: 767px) { 
+  .project-detail-page .project-st-list {
+    justify-content: center;
+}
+}
+@media screen and (max-width: 320px) { 
+.project-detail-page .project-st-list .nav-tabs button {
+    font-size: 14px;
+}
+}
