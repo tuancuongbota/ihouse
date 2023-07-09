@@ -5,7 +5,7 @@
         padding-top: 78px;
     }
     .container{
-        @media screen and (max-width: 1024px){
+        @media screen and (max-width: 992px){
             max-width: 100%;
         }
     }
@@ -22,7 +22,7 @@
             @media screen and (min-width: 768px){
                 width: 25%;
             }
-            @media screen and (max-width: 1024px){
+            @media screen and (max-width: 992px){
                 width: 50%;
             }
             @media screen and (max-width: 767px){

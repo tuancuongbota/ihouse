@@ -24,12 +24,12 @@
     }
     &-nav-toggle {
         display: none;
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 992px) {
           display: inline-block;
         }
     }
     &-right-box {
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 992px) {
             text-align: right;
         }
     }
@@ -37,7 +37,7 @@
         display: flex;
         align-items: center;
         flex-wrap: wrap;
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 992px) {
             display: inline-block;
             font-size: 0;
             position: absolute;
@@ -47,7 +47,7 @@
         }
     }
     .logo img {
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 992px) {
             height: 55px;
             object-fit: scale-down;
         }

@@ -49,7 +49,7 @@
     .row{
       justify-content: space-evenly;
       padding: 0 30px;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 992px) {
         margin: 0;
       }
       @media screen and (min-width: 1024px){
@@ -61,25 +61,25 @@
       }
     }
     .footer-list-item {
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 992px) {
          border-bottom: 1px solid #ebebeb;
          padding-bottom: 20px;
       }
       .footer-links {
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 992px) {
           height: 0;
           overflow: hidden;
         }
         li{
           &:first-child {
-            @media screen and (max-width: 1024px) {
+            @media screen and (max-width: 992px) {
               margin-top: 10px;
             }
           }
         }
     }
      .fp-fh-chevron {
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 992px) {
         background: url(../img/chevron-down.svg) no-repeat center center;
         background-size: 10px 5px;
         height: 5px;
@@ -114,7 +114,7 @@
       line-height: 30px;
       font-weight: 300;
       letter-spacing: .5px;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 992px) {
         border-bottom: 1px solid #ebebeb;
         padding-bottom: 20px;
         margin-bottom: 23px
@@ -127,7 +127,7 @@
       display: -webkit-flex;
       display: flex;
       justify-content: flex-end;
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 992px) {
         justify-content: flex-start;
       }
       .social-media-links-platforms li {
@@ -145,7 +145,7 @@
         margin-left: 30px;
         position: relative;
 
-      @media screen and (max-width: 1024px) {
+      @media screen and (max-width: 992px) {
         display: none;
       }
         .language_btn {
