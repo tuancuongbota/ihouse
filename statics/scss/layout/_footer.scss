@@ -32,7 +32,14 @@
         background-color: rgba(255, 255, 255, 0.15);
         border-color: #333;
         text-decoration: none;
-    
+        @media screen and (max-width: 1024px) { 
+          width: 33px;
+          height: 33px;
+          font-size: 13px;
+          display: block;
+          text-align: center;
+          line-height: 33px;
+        }
         &:hover {
           background-color: rgba(255, 255, 255, 0.25);
           color: #fff;
