@@ -8,10 +8,7 @@ body{
     font-size: 16px;
     &.search_active{
         .header-search {
-            width: 768px;
-            @media screen and (max-width: 1024px){
-                width: 307px;
-            }
+            width: 40%;
         }
         .header-menu-list {
             transform: translateY(-100vh);
