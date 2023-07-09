@@ -302,7 +302,7 @@
         right: 0;
         bottom: 0;
 
-        @media screen and (max-width: 1024px) {
+        @media screen and (max-width: 767px) {
           position: relative;
         }
         .google-map-field {
@@ -1044,5 +1044,12 @@
           color: #333;
         }
       }
-      
+      @media screen and (min-width: 768px){
+        .grid-gallery-list .fp-grid .fp-grid-item:nth-child(2n) {
+          width: calc(50% - 70px);
+          margin-right: 50px;
+          margin-left: 20px;
+      }
+      }
+     
 }
