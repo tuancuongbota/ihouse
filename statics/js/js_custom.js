@@ -316,17 +316,12 @@ if ($('.news-page .nav-fixed').length) {
       fixedNav.style.top = '0';
       $('body').addClass('header-scroll-open');
     } else {
-      nav.style.top = '0';
-      var wDWs = $(window).width();
-      if (wDWs < 992) {
-        fixedNav.style.top = '74px';
-      } else {
-        fixedNav.style.top = '78px';
-      }
-     
+      nav.style.top = '-75px';
+      fixedNav.style.top = '0';
       fixedNav.classList.add('fixed');
       if ($('.header').offset().top <= 0) {
         $('body').removeClass('header-scroll-open');
+        nav.style.top = '0';
         fixedNav.style.top = '0';
         fixedNav.classList.remove('fixed');
       }
