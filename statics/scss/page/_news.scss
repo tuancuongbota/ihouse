@@ -225,6 +225,7 @@
                 text-decoration: none;
                 padding-bottom: 25px;
                 padding-top: 30px;
+                color: #fff;
                 @media screen and (max-width: 1024px){
                     padding: 0;
                 }
@@ -287,7 +288,7 @@
                     flex: 0 0 calc(100%);
                 }
                 a{
-                    color: #fff;
+                    color: #000;
                     display: block;
                     letter-spacing: .5px;
                     font-weight: 400;
@@ -297,6 +298,7 @@
                     width: 100%;
                     transition: opacity .1s ease-in-out;
                     position: relative;
+                    text-decoration: none !important;
                     @media screen and (max-width: 1024px){
                         opacity: .85;
                         transition: opacity .1s;
@@ -329,6 +331,12 @@
 }
 
     .fp-news-grid {
+        .container{
+            @media screen and (min-width: 1200px){
+                max-width: 45%;
+                padding: 0;
+            }
+        }
         @media screen and (max-width: 767px){
             padding-top: 25px;
         }
@@ -338,15 +346,13 @@
         }
         .fp-grid {
             justify-content: center;
+            @media screen and (min-width: 1200px){
+                margin-left: -15px;
+                margin-right: -15px;
+            }
            .fp-grid-item {
-                width: 100%;
-                margin-right: 0;
-                max-height: inherit;
-                padding-bottom: 60px;
-                
-                @media screen and (min-width: 768px){
-                    padding-bottom: 130px;
-                }
+            margin-right: 0;
+            max-height: inherit;
                 &:after {
                   display: none;
                 }
@@ -357,9 +363,7 @@
                 }
                 .fp-grid-item-single-wrap{
                     @media screen and (min-width: 1024px){
-                        padding: 0 48px 3px;
-                        max-width: 1366px;
-                        margin: 0 auto;
+                        padding: 0 15px;
                     }
                 }
                 .fp-ng-content-wrap{
