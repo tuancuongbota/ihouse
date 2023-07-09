@@ -350,19 +350,45 @@ if ($('.fp-trigger').length) {
     }
 }
 if ($('.project-trigger').length) {
-    let isOpen = false;
-    $('.project-trigger').click(function() {
-        if (!isOpen) {
-            gsap.to('.arrow-down', { transform: 'matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)', duration: 1 });
-            gsap.fromTo('.project-filter-drawer li a', { zIndex: 0, opacity: 0, x: "10%", y: 0 }, { zIndex: 0, opacity: 1, x: 0, y: 0, delay: 0.5 });
-            $('.project-filter-drawer').css('height', 'auto');
-            isOpen = true;
-        } else {
-            gsap.to('.arrow-down', { transform: 'matrix(1, 0, 0, 1, 0, 0)', duration: 1 });
-            gsap.to('.project-filter-drawer li a', { zIndex: 0, opacity: 0, x: "10%", y: 0 });
-            $('.project-filter-drawer').css('height', '');
-            isOpen = false;
-        }
-    });
+  var isAnimating = false;
+
+$(".project-trigger").click(function() {
+    if (isAnimating) return;
+    var projectLinks = $(".project-filter-drawer");
+    var arrow = $(this).find(".arrow-down");
+    var projectlistItem = projectLinks.find("li");
+
+      if (projectLinks.css("height") === "0px") {
+          isAnimating = true;
+          gsap.to(projectLinks, { height: "auto" });
+
+          projectlistItem.each(function(index) {
+              var listItem = $(this);
+              setTimeout(() => {
+                  gsap.fromTo(listItem, { zIndex: 0, opacity: 0, x: "10%", y: 0 }, { zIndex: 0, opacity: 1, x: 0, y: 0 });
+                  if (index === projectlistItem.length - 1) {
+                      isAnimating = false;
+                  }
+              }, index * 100); 
+          });
+
+          gsap.to(arrow, { zIndex: 0, transformOrigin: "center 40% 0px", transform: "matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, -2.5, 0, 1)" });
+      } else {
+          isAnimating = true;
+          projectlistItem.each(function(index) {
+              var listItem = $(this);
+              setTimeout(() => {
+                  gsap.to(listItem, { zIndex: 0, opacity: 0, x: "10%", y: 0 });
+                  if (index === projectlistItem.length - 1) {
+                      gsap.to(projectLinks, { height: "0px", delay: 0.5 });
+                      gsap.to(arrow, { zIndex: 0, transformOrigin: "center 40% 0px", transform: "none", onComplete: () => {
+                          isAnimating = false;
+                      } });
+                  }
+              }, index * 100); 
+          });
+      }
+  });
+
 }
 });
