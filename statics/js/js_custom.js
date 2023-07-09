@@ -349,4 +349,20 @@ if ($('.fp-trigger').length) {
     });
     }
 }
+if ($('.project-trigger').length) {
+    let isOpen = false;
+    $('.project-trigger').click(function() {
+        if (!isOpen) {
+            gsap.to('.arrow-down', { transform: 'matrix3d(1, 0, 0, 0, 0, -1, 0, 0, 0, 0, -1, 0, 0, 0, 0, 1)', duration: 1 });
+            gsap.fromTo('.project-filter-drawer li a', { zIndex: 0, opacity: 0, x: "10%", y: 0 }, { zIndex: 0, opacity: 1, x: 0, y: 0, delay: 0.5 });
+            $('.project-filter-drawer').css('height', 'auto');
+            isOpen = true;
+        } else {
+            gsap.to('.arrow-down', { transform: 'matrix(1, 0, 0, 1, 0, 0)', duration: 1 });
+            gsap.to('.project-filter-drawer li a', { zIndex: 0, opacity: 0, x: "10%", y: 0 });
+            $('.project-filter-drawer').css('height', '');
+            isOpen = false;
+        }
+    });
+}
 });
