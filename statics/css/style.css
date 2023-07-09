@@ -12888,6 +12888,7 @@ ul li, ol li { list-style: none; }
   to { stroke-dashoffset: 0; } }
 body { background: #fff; color: #000; font-family: "Open Sans",Helvetica,Arial; line-height: 1.6; letter-spacing: .5px; font-size: 16px; font-size: 16px; }
 body.search_active .header-search { width: 40%; }
+@media screen and (max-width: 1024px) { body.search_active .header-search { width: 100%; } }
 body.search_active .header-menu-list { -webkit-transform: translateY(-100vh); transform: translateY(-100vh); }
 body.header-scroll-open .header { background: #fff; -webkit-transition: background-color .6s,top .3s linear; transition: background-color .6s,top .3s linear; }
 body.header-scroll-open .header .header-nav-list li a { color: #000; }
@@ -13432,5 +13433,4 @@ img { max-width: 100%; }
 .footer .language_btn:hover { background-color: rgba(255, 255, 255, 0.25); color: #fff; }
 .footer .language_btn::before { content: ''; display: block; overflow: hidden; position: absolute; height: 15px; left: 9px; top: 50%; -webkit-transform: translateY(-50%); transform: translateY(-50%); width: 15px; background: url(../img/language-white.svg?v=2666) no-repeat center center/100%; }
 .footer .language_chevron { display: inline; height: 5px; width: 7px; position: absolute; top: 14px; right: 15px; background: url(../img/chevron-down-white.svg?v=2666) no-repeat center center/100%; }
-
 /*# sourceMappingURL=style.css.map */
