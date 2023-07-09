@@ -365,7 +365,7 @@ $(".project-trigger").click(function() {
           projectlistItem.each(function(index) {
               var listItem = $(this);
               setTimeout(() => {
-                  gsap.fromTo(listItem, { zIndex: 0, opacity: 0, x: "10%", y: 0 }, { zIndex: 0, opacity: 1, x: 0, y: 0 });
+                  gsap.fromTo(listItem, { zIndex: 0, opacity: 0, y: '-100%' }, { zIndex: 0, opacity: 1, x: 0, y: 0 });
                   if (index === projectlistItem.length - 1) {
                       isAnimating = false;
                   }
@@ -378,7 +378,7 @@ $(".project-trigger").click(function() {
           projectlistItem.each(function(index) {
               var listItem = $(this);
               setTimeout(() => {
-                  gsap.to(listItem, { zIndex: 0, opacity: 0, x: "10%", y: 0 });
+                  gsap.to(listItem, { zIndex: 0, opacity: 0, y: '-100%' });
                   if (index === projectlistItem.length - 1) {
                       gsap.to(projectLinks, { height: "0px", delay: 0.5 });
                       gsap.to(arrow, { zIndex: 0, transformOrigin: "center 40% 0px", transform: "none", onComplete: () => {
