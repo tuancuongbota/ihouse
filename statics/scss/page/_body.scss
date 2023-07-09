@@ -8,9 +8,9 @@ body{
     font-size: 16px;
     &.search_active{
         .header-search {
-            width: 40%;
+            width: 768px;
             @media screen and (max-width: 1024px){
-                width: 100%;
+                width: 307px;
             }
         }
         .header-menu-list {
