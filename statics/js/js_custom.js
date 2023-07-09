@@ -244,6 +244,7 @@ if ($('.news-detail-text').length) {
     }
   });
 }
+
 if ($('.slick-news-list').length) {
   $('.slick-news-list').slick({
     dots: true,
@@ -431,5 +432,41 @@ if ($('.project-tabs').length) {
           });
       });
   });
+  }
+  if ($('.project-detail-page').length) {
+    const elements = [
+      $('.project-pd-project-types'),
+      $('.project-dropback'),
+      $('.project-detail-page .news-detail-desc'),
+      $('.project-map'),
+      $('.project-tabs'),
+      $('.grid-gallery-list'),
+      $('.block-news')
+    ];
+    
+    // Thiết lập các phần tử ban đầu ẩn đi
+    gsap.set(elements, { opacity: 0, y: 100 });
+    
+    // Xử lý sự kiện scroll
+    $(window).scroll(function() {
+      // Lặp qua từng phần tử
+      elements.forEach(element => {
+        // Kiểm tra xem phần tử có nằm trong khung nhìn hiện tại hay không
+        if (isElementVisible(element)) {
+          // Áp dụng hiệu ứng hiển thị từ dưới lên trên bằng GSAP
+          gsap.to(element, { opacity: 1, y: 0, duration: 1 });
+        }
+      });
+    });
+    
+    // Hàm kiểm tra xem phần tử có nằm trong khung nhìn hiện tại hay không
+    function isElementVisible(element) {
+      const viewportHeight = $(window).height();
+      const elementTop = element.offset().top;
+      const elementBottom = elementTop + element.outerHeight();
+      const scrollTop = $(window).scrollTop();
+    
+      return (elementTop < (scrollTop + viewportHeight)) && (elementBottom > scrollTop);
+    }
   }
 });
