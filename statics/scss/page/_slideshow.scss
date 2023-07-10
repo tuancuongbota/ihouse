@@ -3,6 +3,7 @@
     @media screen and (max-width: 992px) {
       overflow: hidden;
     }
+    
     .slide_labels {
       width: 100%;
       z-index: 100;
@@ -175,6 +176,9 @@
       border: none;
       font-size: 0;
       outline: none;
+      @media screen and (max-width: 992px) {
+        display: none !important;
+      }
       &.slick-prev::before{
           content: "";
           border: 0;
