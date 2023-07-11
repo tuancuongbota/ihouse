@@ -18,8 +18,8 @@ $(document).ready(function(){
     });
 
     function applyAnimation($slide, reset) {
-        var scaleStart = reset ? 1.04901 : 1.01202;
-        var scaleEnd = reset ? 1.01202 : 1.04901;
+        var scaleStart = reset ? 1.04901 : 1.00000;
+        var scaleEnd = reset ? 1.00000 : 1.04901;
 
         $slide.css({
             'transform': 'translate3d(0px, 0px, 0px) scale(' + scaleStart + ')',
