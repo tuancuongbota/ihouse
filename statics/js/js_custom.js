@@ -2,7 +2,7 @@ $(document).ready(function(){
   if ($('.slick-slideshow').length) {
     $('.slick-slideshow').slick({
       dots: true,
-      infinite: true,
+      infinite: false,
       speed: 500, 
       swipe: true, 
       swipeToSlide: true, 
