@@ -1,5 +1,30 @@
 $(document).ready(function(){
   if ($('.slick-slideshow').length) {
+    $('.slick-slideshow').slick({
+      dots: true,
+      infinite: true,
+      speed: 500, 
+      swipe: true, 
+      swipeToSlide: true, 
+      touchMove: true, 
+      speed: 500,
+      slidesToShow: 1,
+      adaptiveHeight: false,
+      autoplay: true,
+      transformsEnabled: !1,
+      unslicked: !1,
+      pauseOnHover: false,
+      pauseOnFocus: false,
+      autoplaySpeed: 8000,
+      customPaging: (_slider, i) => '<div id="dot' + (i + 1) + '"><svg viewBox="0 0 40 40" class="spinner" width="20" height="20" style="--duration: 15.046667s;"><circle cx="20" cy="20" r="12" class="outer" opacity="0.5"></circle><circle cx="20" cy="20" r="5.5" class="inner" opacity="0.5"></circle></svg></div>'
+    });
+    var $currentSlide = $('.slick-current');
+    TweenMax.fromTo($currentSlide, 10, { scale: 1 }, {
+      scale: 1.04901,
+      onComplete: function() {
+        $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+      }
+    });
     $('.slick-slideshow').on('init', function(event, slick) {
       var $slides = $(slick.$slides);
       var $currentSlide = $slides.eq(slick.currentSlide);
@@ -49,24 +74,12 @@ $(document).ready(function(){
     function deactivateSlide(slideIndex) {
       $('#home-title-slide' + slideIndex).removeClass('active');
     }
-    $('.slick-slideshow').slick({
-      dots: true,
-      infinite: true,
-      speed: 500, 
-      swipe: true, 
-      swipeToSlide: true, 
-      touchMove: true, 
-      speed: 500,
-      slidesToShow: 1,
-      adaptiveHeight: false,
-      autoplay: true,
-      transformsEnabled: !1,
-      unslicked: !1,
-      pauseOnHover: false,
-      pauseOnFocus: false,
-      autoplaySpeed: 8000,
-      customPaging: (_slider, i) => '<div id="dot' + (i + 1) + '"><svg viewBox="0 0 40 40" class="spinner" width="20" height="20" style="--duration: 15.046667s;"><circle cx="20" cy="20" r="12" class="outer" opacity="0.5"></circle><circle cx="20" cy="20" r="5.5" class="inner" opacity="0.5"></circle></svg></div>'
+    $(window).on('beforeunload', function() {
+      var $currentSlide = $('.slick-current');
+      TweenMax.killTweensOf($currentSlide);
+      $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     });
+  
   }
   if($('.header-search-toggle').length) {
     $('.header-search-toggle').on('click', function() {
