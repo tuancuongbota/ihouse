@@ -126,10 +126,10 @@
     <div class="header-top-gradient"></div>
     <div class="news-details-page project-detail-page">
         <div class="news-details-bg">
-            <div class="fp-grid-item is-hidden">
+            <div class="fp-grid-item is-loaded">
                 <div class="fp-grid-colour" style="background-color: #B59785;"></div>
                 <div class="fp-grid-content">
-                    <img src="statics/img/banner-1.jpg" alt="Biệt thự MMs00" class="img-fluid is-blurred" />
+                    <img src="statics/img/banner-1.jpg" alt="Biệt thự MMs00" class="img-fluid" />
                 </div>
                 <div class="fp-ph-gradient"></div>
                 <div class="fp-ph-copy">
@@ -415,6 +415,7 @@
     <script>
         $(document).ready(function() {
             var allowSliding = false;
+
             $('.project-button-primary').click(function() {
                 $.fancybox.open({
                     src: '#fancybox-content',
@@ -439,15 +440,13 @@
                 $.fancybox.close();
             });
 
-            $(document).on('mousewheel', '.fancybox-is-sliding', function(e) {
-                if (!allowSliding) {
-                    e.preventDefault();
-                }
+            $('.fancybox-slide, .fancybox-is-sliding').on('mousewheel touchmove', function(e) {
+                e.preventDefault();
             });
 
-            $(document).on('touchmove', '.fancybox-is-sliding', function(e) {
-                if (!allowSliding) {
-                    e.preventDefault();
+            $(document).on('click', function(e) {
+                if ($(e.target).closest('.fancybox-close-small').length === 0 && !$(e.target).hasClass('project-button-primary')) {
+                    return false;
                 }
             });
         });
