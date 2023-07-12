@@ -1,13 +1,21 @@
 $(document).ready(function(){
   if ($('.slick-slideshow').length) {
-    $('.slick-slideshow').slick({
+    var $slickSlideshow = $('.slick-slideshow');
+    var $slideLabelsTitles = $('.slide_labels_titles li');
+
+    // Đảm bảo tất cả các hình ảnh đã được tải trước khi kích hoạt sự kiện
+    $slickSlideshow.on('init', function() {
+      var $currentSlide = getCurrentSlide();
+      activateSlideTitle($currentSlide);
+    });
+
+    $slickSlideshow.slick({
       dots: true,
-      infinite: false,
-      speed: 500, 
-      swipe: true, 
-      swipeToSlide: true, 
-      touchMove: true, 
+      infinite: true,
       speed: 500,
+      swipe: true,
+      swipeToSlide: true,
+      touchMove: true,
       slidesToShow: 1,
       adaptiveHeight: false,
       autoplay: true,
@@ -18,69 +26,65 @@ $(document).ready(function(){
       autoplaySpeed: 8000,
       customPaging: (_slider, i) => '<div id="dot' + (i + 1) + '"><svg viewBox="0 0 40 40" class="spinner" width="20" height="20" style="--duration: 15.046667s;"><circle cx="20" cy="20" r="12" class="outer" opacity="0.5"></circle><circle cx="20" cy="20" r="5.5" class="inner" opacity="0.5"></circle></svg></div>'
     });
-    var $currentSlide = $('.slick-current');
-    TweenMax.fromTo($currentSlide, 10, { scale: 1 }, {
-      scale: 1.04901,
-      onComplete: function() {
-        $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
-      }
-    });
-    $('.slick-slideshow').on('init', function(event, slick) {
-      var $slides = $(slick.$slides);
-      var $currentSlide = $slides.eq(slick.currentSlide);
-      activateSlide(slick.currentSlide);
-    });
 
-    $('.slick-slideshow').on('beforeChange', function(event, slick, currentSlide, nextSlide) {
-      var $slides = $(slick.$slides);
-      var $currentSlide = $slides.eq(currentSlide);
-      var $nextSlide = $slides.eq(nextSlide);
+    $slickSlideshow.on('beforeChange', function(event, slick, currentSlide, nextSlide) {
+      var $currentSlide = getCurrentSlide();
+      var $nextSlide = slick.$slides.eq(nextSlide);
+
       deactivateSlide(currentSlide);
-      activateSlide(nextSlide);
-      TweenMax.fromTo($currentSlide, 10, { scale: 1 }, {
+      activateSlideTitle($nextSlide);
+      TweenMax.fromTo($currentSlide, 10, {
+        scale: 1
+      }, {
         scale: 1.04901,
         onComplete: function() {
           $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
         }
       });
-      
-      TweenMax.fromTo($nextSlide, 10, { scale: 1 }, {
+
+      TweenMax.fromTo($nextSlide, 10, {
+        scale: 1
+      }, {
         scale: 1.04901,
         onComplete: function() {
           $nextSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
         }
       });
-      if (!isAnimating) { 
-        isAnimating = true; 
-        var $slides = $(slick.$slides);
-        var $currentSlide = $slides.eq(currentSlide);
+
+      if (!isAnimating) {
+        isAnimating = true;
         TweenMax.killTweensOf($currentSlide);
         $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
       }
     });
-    $('.slick-slideshow').on('afterChange', function(event, slick, currentSlide) {
-      isAnimating = false; 
-      var $slides = $(slick.$slides);
-      var $currentSlide = $slides.eq(currentSlide);
+
+    $slickSlideshow.on('afterChange', function(event, slick, currentSlide) {
+      isAnimating = false;
+      var $currentSlide = getCurrentSlide();
       $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     });
-    function activateSlide(slideIndex) {
-      $('.slide_labels_titles li').removeClass('active');
-      var $currentSlide = $('#home-title-slide' + slideIndex);
-      $currentSlide.addClass('active');
-      TweenMax.from($currentSlide, 1, { x: '100%' });
+
+    function getCurrentSlide() {
+      return $slickSlideshow.find('.slick-current');
+    }
+
+    function activateSlideTitle($slide) {
+      var slideIndex = $slide.index();
+      $slideLabelsTitles.removeClass('active');
+      $('#home-title-slide' + slideIndex).addClass('active');
     }
 
     function deactivateSlide(slideIndex) {
       $('#home-title-slide' + slideIndex).removeClass('active');
     }
+
     $(window).on('beforeunload', function() {
-      var $currentSlide = $('.slick-current');
+      var $currentSlide = getCurrentSlide();
       TweenMax.killTweensOf($currentSlide);
       $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     });
-  
-  }
+    
+}
   if($('.header-search-toggle').length) {
     $('.header-search-toggle').on('click', function() {
       $('.header-search-wrapper').toggleClass('active');
