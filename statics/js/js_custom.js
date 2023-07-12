@@ -163,11 +163,11 @@ if($('.language_mb_btn').length) {
           setTimeout(function() {
             currentItem.find("img").removeClass("is-blurred");
             currentItem.addClass("is-loaded");
-          }, 1200);
+          }, 500);
         }, 1000);
       }, delay);
   
-      delay += 500; // Mỗi phần tử được thực hiện sau 0.5 giây
+      delay += 100; // Mỗi phần tử được thực hiện sau 0.5 giây
     });
   }
   if ($('.footer-list-item').length) {
