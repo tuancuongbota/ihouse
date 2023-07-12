@@ -2,8 +2,6 @@ $(document).ready(function(){
   if ($('.slick-slideshow').length) {
     var $slickSlideshow = $('.slick-slideshow');
     var $slideLabelsTitles = $('.slide_labels_titles li');
-
-    // Đảm bảo tất cả các hình ảnh đã được tải trước khi kích hoạt sự kiện
     $slickSlideshow.on('init', function() {
       var $currentSlide = getCurrentSlide();
       activateSlideTitle($currentSlide);
@@ -56,6 +54,7 @@ $(document).ready(function(){
         TweenMax.killTweensOf($currentSlide);
         $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
       }
+      gsap.from($('.slide_labels_titles li.active'), { x: '100%', duration: 1, ease: 'power2.out' });
     });
 
     $slickSlideshow.on('afterChange', function(event, slick, currentSlide) {
@@ -83,8 +82,9 @@ $(document).ready(function(){
       TweenMax.killTweensOf($currentSlide);
       $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     });
-    
-}
+    gsap.from($('.slide_labels_titles li.active'), { x: '100%', duration: 1, ease: 'power2.out' });
+  
+  }
   if($('.header-search-toggle').length) {
     $('.header-search-toggle').on('click', function() {
       $('.header-search-wrapper').toggleClass('active');

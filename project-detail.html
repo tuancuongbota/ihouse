@@ -414,41 +414,7 @@
     </div>
     <script>
         $(document).ready(function() {
-            var allowSliding = false;
 
-            $('.project-button-primary').click(function() {
-                $.fancybox.open({
-                    src: '#fancybox-content',
-                    type: 'inline',
-                    closeClickOutside: false,
-                    clickSlide: false,
-                    clickOutside: false,
-                    hideOnOverlayClick: false,
-                    hideOnContentClick: false
-                });
-            });
-
-            $('.project-gallery-single').click(function() {
-                $(this).toggleClass('active');
-                var imageSrc = $(this).attr('src');
-                var imageAlt = $(this).attr('alt');
-                $('#fancybox-main-image').attr('src', imageSrc).attr('alt', imageAlt);
-            });
-
-            $(document).on('click', '.fancybox-close-small', function() {
-                allowSliding = true;
-                $.fancybox.close();
-            });
-
-            $('.fancybox-slide, .fancybox-is-sliding').on('mousewheel touchmove', function(e) {
-                e.preventDefault();
-            });
-
-            $(document).on('click', function(e) {
-                if ($(e.target).closest('.fancybox-close-small').length === 0 && !$(e.target).hasClass('project-button-primary')) {
-                    return false;
-                }
-            });
         });
     </script>
     <footer class="footer-custom">
