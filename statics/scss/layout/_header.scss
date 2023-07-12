@@ -187,6 +187,11 @@
                 display: none;
               }
             }
+            &.active a {
+              font-weight: 600;
+              color: #fff;
+              opacity: 1;
+            }
           }
       
           a {
@@ -203,6 +208,7 @@
             font-size: 14px;
             opacity: .7;
           }
+          
         }
       }
       

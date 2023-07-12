@@ -240,7 +240,9 @@
           &.active {
             background: #f5f5f5;
           }
-      
+          &:last-child a {
+            border-radius: 0 0 8px 8px;
+        }
           &:not(.active) a {
             opacity: 0.7 !important;
             font-weight: 400 !important;
@@ -323,8 +325,10 @@
                 padding: 14px 20px 15px;
                 text-decoration: none;
               }
-          
-              &.active a {
+              &:last-child a {
+                border-radius: 0 0 8px 8px;
+            }
+              &.active a,&:hover a {
                 background-color: rgba(255, 255, 255, 0.15);
               }
             }

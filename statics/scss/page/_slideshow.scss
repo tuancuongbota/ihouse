@@ -98,7 +98,7 @@
         padding: 0;
         position: relative;
         background: #000;
-      
+        transition: background-color .6s;
         &:hover .slick-arrow {
           opacity: 1 !important;
         }

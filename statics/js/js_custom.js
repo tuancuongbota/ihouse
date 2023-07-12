@@ -304,8 +304,8 @@ if ($('.header-detail-page').length) {
   
   window.onscroll = function() {
     const currentScrollPos = window.pageYOffset;
-    if (prevScrollpos < currentScrollPos && currentScrollPos > 75) {
-      nav.style.top = '-75px';
+    if (prevScrollpos < currentScrollPos && currentScrollPos > 80) {
+      nav.style.top = '-80px';
       $('body').addClass('header-scroll-open'); 
     } else {
       nav.style.top = '0';
@@ -337,13 +337,13 @@ if ($('.news-page .nav-fixed').length) {
   window.onscroll = function() {
     const currentScrollPos = window.pageYOffset;
   
-    if (prevScrollpos < currentScrollPos && currentScrollPos > 75) {
-      nav.style.top = '-75px';
+    if (prevScrollpos < currentScrollPos && currentScrollPos > 80) {
+      nav.style.top = '-80px';
       fixedNav.classList.add('fixed');
       fixedNav.style.top = '0';
       $('body').addClass('header-scroll-open');
     } else {
-      nav.style.top = '-75px';
+      nav.style.top = '-80px';
       fixedNav.style.top = '0';
       fixedNav.classList.add('fixed');
       if ($('.header').offset().top <= 0) {
