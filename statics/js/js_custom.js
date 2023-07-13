@@ -1,4 +1,5 @@
 $(document).ready(function(){
+  var wDWs = $(window).width();
   if ($('.slick-slideshow').length) {
     var $slickSlideshow = $('.slick-slideshow');
     var $slideLabelsTitles = $('.slide_labels_titles li');
@@ -205,7 +206,6 @@ if($('.language_mb_btn').length) {
     });
   }
   if ($('.footer-title').length) {
-    var wDWs = $(window).width();
     if (wDWs < 992) {
       $(".footer-title").click(function() {
         var footerLinks = $(this).siblings(".footer-links");
@@ -474,22 +474,15 @@ if ($('.project-tabs').length) {
       $('.block-news')
     ];
     
-    // Thiết lập các phần tử ban đầu ẩn đi
     gsap.set(elements, { opacity: 0, y: 100 });
-    
-    // Xử lý sự kiện scroll
     $(window).scroll(function() {
-      // Lặp qua từng phần tử
       elements.forEach(element => {
-        // Kiểm tra xem phần tử có nằm trong khung nhìn hiện tại hay không
         if (isElementVisible(element)) {
-          // Áp dụng hiệu ứng hiển thị từ dưới lên trên bằng GSAP
           gsap.to(element, { opacity: 1, y: 0, duration: 1 });
         }
       });
     });
     
-    // Hàm kiểm tra xem phần tử có nằm trong khung nhìn hiện tại hay không
     function isElementVisible(element) {
       const viewportHeight = $(window).height();
       const elementTop = element.offset().top;
@@ -498,5 +491,142 @@ if ($('.project-tabs').length) {
     
       return (elementTop < (scrollTop + viewportHeight)) && (elementBottom > scrollTop);
     }
+    $('.project-button-primary').click(function() {
+      $('.project-gallery-overlay').css('opacity', '0').css('display', 'block').animate({ opacity: 1 }, 500);
+    
+      var projectItems = $(".project-gallery-single");
+      var delay = 0;
+      projectItems.each(function(index) {
+        var currentprojectItem = $(this);
+        setTimeout(function() {
+          setTimeout(function() {
+            currentprojectItem.removeClass("is-hidden");
+            setTimeout(function() {
+              currentprojectItem.find("img").removeClass("is-blurred");
+              currentprojectItem.addClass("is-loaded");
+            }, 500);
+          });
+        });
+      });
+      updateCounter();
+    });
+    $('.project-gallery-overlay-close').click(function() {
+      $('.project-gallery-overlay').fadeOut(500);  
+    });
+  }
+  if ($('.project-gallery-single').length) {
+    var canScroll = true;
+  var scrollTimeout;
+
+  $('.project-gallery-single').click(function() {
+    $('.project-gallery-single').removeClass('is-selected');
+    
+    $(this).addClass('is-selected');
+    
+    var imageSrc = $(this).find('.project-gallery-img').attr('src');
+    $('.project-pswp-img').attr('src', imageSrc);
+  });
+  if (wDWs > 992) {
+      $('.project-pswp-scroll-wrap').on('mousewheel', function(event) {
+        event.preventDefault();
+        
+        if (!canScroll) return;
+        
+        clearTimeout(scrollTimeout);
+        
+        var currentSelected = $('.project-gallery-single.is-selected');
+        var isLastImage = currentSelected.is(':last-child');
+        var isFirstImage = currentSelected.is(':first-child');
+        
+        if (event.originalEvent.deltaY < 0) {
+            if (!isFirstImage) {
+                var prevSelected = currentSelected.prev('.project-gallery-single');
+                currentSelected.removeClass('is-selected');
+                prevSelected.addClass('is-selected');
+                var imageSrc = prevSelected.find('.project-gallery-img').attr('src');
+                changeImageWithGsap(imageSrc);
+            }
+        } else {
+            if (!isLastImage) {
+                var nextSelected = currentSelected.next('.project-gallery-single');
+                currentSelected.removeClass('is-selected');
+                nextSelected.addClass('is-selected');
+                var imageSrc = nextSelected.find('.project-gallery-img').attr('src');
+                changeImageWithGsap(imageSrc);
+            } else {
+                var firstSelected = currentSelected.siblings().first('.project-gallery-single');
+                currentSelected.removeClass('is-selected');
+                firstSelected.addClass('is-selected');
+                var imageSrc = firstSelected.find('.project-gallery-img').attr('src');
+                changeImageWithGsap(imageSrc);
+            }
+        }
+        
+        canScroll = false;
+        scrollTimeout = setTimeout(function() {
+            canScroll = true;
+        }, 500); // Chỉnh số lượng thời gian chậm lại tại đây (theo mili giây)
+     });
+    }
+  $('.project-pswp-zoom-wrap').on('click', function() {
+    var imgElement = $('.project-pswp-img');
+    var galleryElement = $('.project-gallery-swiper');
+  
+    if (imgElement.hasClass('zoomed-in')) {
+      gsap.to(imgElement, { scale: 1, duration: 0.3 });
+      imgElement.removeClass('zoomed-in');
+    } else {
+      var galleryWidth = galleryElement.width();
+      var galleryHeight = galleryElement.height();
+  
+      gsap.fromTo(
+        imgElement,
+        { scale: 1 },
+        { scale: galleryWidth / imgElement.width(), duration: 0.3 }
+      );
+      imgElement.addClass('zoomed-in');
+    }
+  });
+  
+  function changeImageWithGsap(imageSrc) {
+    var imgElement = $('.project-pswp-img');
+    
+    gsap.to(imgElement, { opacity: 0, duration: 0.2, onComplete: function() {
+      $('.project-pswp-img').attr('src', imageSrc);
+      gsap.to(imgElement, { opacity: 1, duration: 0.2 });
+    }});
+    updateCounter();
+  }
+  $('.project-pswp-button.project-pswp-button-arrow-left').click(function() {
+  var currentSelected = $('.project-gallery-single.is-selected');
+  var prevSelected = currentSelected.prev('.project-gallery-single');
+  
+  if (prevSelected.length) {
+    currentSelected.removeClass('is-selected');
+    prevSelected.addClass('is-selected');
+    var imageSrc = prevSelected.find('.project-gallery-img').attr('src');
+    changeImageWithGsap(imageSrc);
+    updateCounter();
+  }
+});
+
+$('.project-pswp-button.project-pswp-button-arrow-right').click(function() {
+  var currentSelected = $('.project-gallery-single.is-selected');
+  var nextSelected = currentSelected.next('.project-gallery-single');
+  
+  if (nextSelected.length) {
+    currentSelected.removeClass('is-selected');
+    nextSelected.addClass('is-selected');
+    var imageSrc = nextSelected.find('.project-gallery-img').attr('src');
+    changeImageWithGsap(imageSrc);
+    updateCounter();
+  }
+});
+
+function updateCounter() {
+  var currentSelectedIndex = $('.project-gallery-single.is-selected').index() + 1;
+  var totalImages = $('.project-gallery-single').length;
+  $('.project-pswp-counter').text(currentSelectedIndex + '/' + totalImages);
+}
   }
 });
