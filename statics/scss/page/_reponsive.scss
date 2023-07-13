@@ -236,9 +236,20 @@
           }
         }
       }
-      
+      .green-detail-list-item .green-detail-card-body {
+        padding: 32px;
+      } 
 }
 @media screen and (max-width: 767px) { 
+  .green-detail-content .container, .green-detail-list .container {
+    padding: 0 20px;
+  }
+  
+
+  .green-detail-page .fp-news-grid {
+    margin-top: 0;
+  }
+  
   .project-detail-page .project-st-list {
     justify-content: center;
 }

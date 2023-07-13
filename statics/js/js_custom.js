@@ -610,23 +610,53 @@ if ($('.project-tabs').length) {
   }
 });
 
-$('.project-pswp-button.project-pswp-button-arrow-right').click(function() {
-  var currentSelected = $('.project-gallery-single.is-selected');
-  var nextSelected = currentSelected.next('.project-gallery-single');
-  
-  if (nextSelected.length) {
-    currentSelected.removeClass('is-selected');
-    nextSelected.addClass('is-selected');
-    var imageSrc = nextSelected.find('.project-gallery-img').attr('src');
-    changeImageWithGsap(imageSrc);
-    updateCounter();
-  }
-});
+  $('.project-pswp-button.project-pswp-button-arrow-right').click(function() {
+      var currentSelected = $('.project-gallery-single.is-selected');
+      var nextSelected = currentSelected.next('.project-gallery-single');
+      
+      if (nextSelected.length) {
+        currentSelected.removeClass('is-selected');
+        nextSelected.addClass('is-selected');
+        var imageSrc = nextSelected.find('.project-gallery-img').attr('src');
+        changeImageWithGsap(imageSrc);
+        updateCounter();
+      }
+    });
 
-function updateCounter() {
-  var currentSelectedIndex = $('.project-gallery-single.is-selected').index() + 1;
-  var totalImages = $('.project-gallery-single').length;
-  $('.project-pswp-counter').text(currentSelectedIndex + '/' + totalImages);
-}
+    function updateCounter() {
+      var currentSelectedIndex = $('.project-gallery-single.is-selected').index() + 1;
+      var totalImages = $('.project-gallery-single').length;
+      $('.project-pswp-counter').text(currentSelectedIndex + '/' + totalImages);
+    }
+  }
+  if ($('.green-detail-list-btn').length) {
+    $('.green-detail-list-btn a').click(function(e) {
+         e.preventDefault();
+         const videoUrl = $(this).attr('href');
+         const videoEmbedUrl = videoUrl.replace('watch?v=', 'embed/');
+         $.fancybox.open({
+             src: videoEmbedUrl,
+             type: 'iframe',
+             iframe: {
+              css: {
+                width: '800px',
+                height: '450px'
+              }
+            }
+         });
+    });
+  }
+  if ($('.green-detail-page').length) {
+    function animateScroll() {
+      var content = $('.green-detail-content');
+      var list = $('.green-detail-list-item');
+      gsap.set(content, { opacity: 0, y: 100 });
+      gsap.set(list, { opacity: 0, y: 200 });
+      gsap.to(content, { opacity: 1, y: 0, duration: 1, delay: 0.5 });
+      gsap.to(list, { opacity: 1, y: 0, duration: 1, delay: 1 });
+    }
+    $(window).on('load', function() {
+      animateScroll();
+    });
   }
 });

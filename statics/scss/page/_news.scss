@@ -344,9 +344,8 @@
 
     .fp-news-grid {
         .container{
-            @media screen and (min-width: 1200px){
-                max-width: 1170px;
-                padding: 0;
+            @media (min-width: 1024px){
+                max-width: 1600px;
             }
             @media screen and (max-width: 1024px){
                 max-width: 100%;
@@ -378,6 +377,9 @@
             }
             @media screen and (min-width: 1024px){
                 padding: 0 15px;
+            }
+            &:hover .fp-ng-image-link > .fp-content img{
+                transform: translate3d(-50%, -50%, 0) scale(1);
             }
                 &:after {
                   display: none;
@@ -473,8 +475,6 @@
                         bottom: 0;
                         overflow: hidden;
                         img {
-                            transition: opacity 1.5s,-webkit-transform 1.5s ease-out;
-                            transition: transform 1.5s ease-out,opacity 1.5s;
                             transition: transform 1.5s ease-out,opacity 1.5s,-webkit-transform 1.5s ease-out;
                             will-change: transform;
                             width: 100%;
@@ -482,9 +482,7 @@
                             position: absolute;
                             left: 50%;
                             top: 50%;
-                            -webkit-transform: translate(-50%, -50%) scale(1);
-                            -ms-transform: translate(-50%, -50%) scale(1);
-                            transform: translate(-50%, -50%) scale(1);
+                            transform: translate(-50%, -50%) scale(1.03);
                             &.is-blurred {
                                 opacity: 0;
                             }
@@ -518,6 +516,7 @@
                     }
                 }
             }
+            
               
         }
     }
