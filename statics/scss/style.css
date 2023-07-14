@@ -26469,62 +26469,16 @@ img {
   .green-detail-list-item .quote .quotee {
     font-weight: bold; }
 
-.studio-page h2 {
-  margin-top: 0;
-  text-align: center;
-  margin-bottom: 38px; }
-  .studio-page h2 a {
-    color: #1a1a1a;
-    text-decoration: none;
-    background-color: #ebebeb;
-    border-color: #ebebeb;
-    display: inline-block;
-    padding: 4px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    transition: background-color .3s ease-in-out,color .3s ease-in-out; }
-    .studio-page h2 a:hover {
-      background: #d9d9d9;
-      color: #000; }
-.studio-page .studio-personnel-img img {
-  margin: auto;
-  display: block; }
 .studio-page .news-details-bg {
   margin-bottom: 0; }
 .studio-page .studio-content {
   padding: 48px 0; }
-  @media (min-width: 1024px) {
-    .studio-page .studio-content .container {
-      max-width: 1170px; } }
-.studio-page .studio-personnel-img {
-  margin-top: 50px; }
-.studio-page .studio-text {
-  text-align: center;
-  margin: auto; }
-  @media (min-width: 1024px) {
-    .studio-page .studio-text {
-      max-width: 650px;
-      padding: 0 56px;
-      text-align: justify; } }
-  .studio-page .studio-text p {
-    margin-bottom: 16px;
-    font-size: 15px;
-    letter-spacing: 0; }
-.studio-page .studio-personnel, .studio-page .studio-working, .studio-page .studio-life {
-  margin-bottom: 48px; }
-.studio-page .studio-expert {
-  text-align: center;
-  margin-bottom: 48px; }
-  .studio-page .studio-expert h2 {
-    color: #1a1a1a;
-    text-decoration: none;
-    background-color: #ebebeb;
-    border-color: #ebebeb;
-    display: inline-block;
-    padding: 4px 20px;
-    border-radius: 25px;
-    font-size: 14px;
-    transition: background-color .3s ease-in-out,color .3s ease-in-out; }
+.studio-page .studio-text p {
+  margin-bottom: 16px;
+  font-size: 16px; }
+@media (min-width: 1024px) {
+  .studio-page .container {
+    max-width: 909px; } }
 
 @media screen and (max-width: 992px) {
   .search-page .nav-tabs {
@@ -26720,13 +26674,6 @@ img {
   .green-detail-list-item .green-detail-card-body {
     padding: 32px; } }
 @media screen and (max-width: 767px) {
-  .studio-page .studio-content .container {
-    padding: 0 20px; }
-  .studio-page .studio-personnel .studio-text {
-    padding: 0 10px; }
-  .studio-page .studio-text p {
-    text-align: justify; }
-
   .green-detail-content .container, .green-detail-list .container {
     padding: 0 20px; }
 

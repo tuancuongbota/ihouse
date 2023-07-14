@@ -659,4 +659,32 @@ if ($('.project-tabs').length) {
       animateScroll();
     });
   }
+  if ($('.studio-page').length) {
+    const elements = [
+      $('.studio-content'),
+      $('.studio-personnel'),
+      $('.studio-working'),
+      $('.studio-life'),
+      $('.studio-expert'),
+      $('.studio-page .fp-grid')
+    ];
+    
+    gsap.set(elements, { opacity: 0, y: 200 });
+    $(window).scroll(function() {
+      elements.forEach(element => {
+        if (isElementVisible(element)) {
+          gsap.to(element, { opacity: 1, y: 0, duration: 1 });
+        }
+      });
+    });
+    
+    function isElementVisible(element) {
+      const viewportHeight = $(window).height();
+      const elementTop = element.offset().top;
+      const elementBottom = elementTop + element.outerHeight();
+      const scrollTop = $(window).scrollTop();
+    
+      return (elementTop < (scrollTop + viewportHeight)) && (elementBottom > scrollTop);
+    }
+  }
 });

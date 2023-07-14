@@ -241,6 +241,20 @@
       } 
 }
 @media screen and (max-width: 767px) { 
+  .studio-page {
+    .studio-content .container {
+      padding: 0 20px;
+    }
+  
+    .studio-personnel .studio-text {
+      padding: 0 10px;
+    }
+  
+    .studio-text p {
+      text-align: justify;
+    }
+  }
+  
   .green-detail-content .container, .green-detail-list .container {
     padding: 0 20px;
   }
