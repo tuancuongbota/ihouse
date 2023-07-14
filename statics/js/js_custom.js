@@ -698,4 +698,10 @@ if ($('.project-tabs').length) {
       return (elementTop < (scrollTop + viewportHeight)) && (elementBottom > scrollTop);
     }
   }
+  if ($('.dropdown-toggle').length) {
+    $('.dropdown-toggle').click(function() {
+      $('.dropdown-menu').not($(this).next('.dropdown-menu')).hide();
+      $(this).next('.dropdown-menu').toggle();
+    });
+  }
 });
