@@ -345,7 +345,7 @@
     .fp-news-grid {
         .container{
             @media (min-width: 1024px){
-                max-width: 1600px;
+                max-width: 100%;
             }
             @media screen and (max-width: 1024px){
                 max-width: 100%;
@@ -399,7 +399,7 @@
                         font-size: 21px;
                         letter-spacing: .5px;
                         line-height: 24px;
-                        margin-bottom: 16px;
+                        margin-bottom: 15px;
                         display: -webkit-box;
                         -webkit-line-clamp: 2;
                         -webkit-box-orient: vertical;
@@ -412,7 +412,7 @@
                         font-weight: 300;
                         letter-spacing: .5px;
                         line-height: 24px;
-                        margin-bottom: 30px;
+                        margin-bottom: 15px;
                         width: 100%;
                         display: -webkit-box;
                         -webkit-line-clamp: 3;

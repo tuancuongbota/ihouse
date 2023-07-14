@@ -246,8 +246,7 @@ img{
     top: 12px;
     left: 12px;
     position: absolute;
-    box-shadow: 0 0 0 0 #c31d1d;
-    background-color: rgba(230, 8, 8, 0.7);
+    background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     border: 2px solid transparent;
     -webkit-animation: phone-vr-circle-fill 2.3s infinite ease-in-out;
@@ -261,7 +260,7 @@ img{
   }
   
   .phone-vr-img-circle {
-    background-color: #e60808;
+    background-color: rgba(255, 255, 255, 0.15);
     width: 40px;
     height: 40px;
     line-height: 40px;
@@ -377,17 +376,7 @@ img{
       display: none;
     }
   }
-  
-  #zalo-vr {
-    .phone-vr-circle-fill {
-      box-shadow: 0 0 0 0 #2196F3;
-      background-color: rgba(33, 150, 243, 0.7);
-    }
-  
-    .phone-vr-img-circle {
-      background-color: #2196F3;
-    }
-  }
+
 
   .bota_menu_bar_mb {
     text-align: right;
@@ -411,4 +400,11 @@ img{
       margin-top: 4px;
     }
   }
-  
+  .body-page{
+    .phone-vr-img-circle {
+      background-color: #000000;
+    }
+    .phone-vr-circle-fill {
+      background-color: rgba(70, 70, 70, 0.35);
+  }
+  } 
