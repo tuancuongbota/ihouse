@@ -83,6 +83,17 @@ $(document).ready(function(){
       TweenMax.killTweensOf($currentSlide);
       $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     });
+    $(window).on('load', function() {
+      var $currentSlide = getCurrentSlide();
+      TweenMax.fromTo($currentSlide, 10, {
+        scale: 1
+      }, {
+        scale: 1.04901,
+        onComplete: function() {
+          $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
+        }
+      });
+    })
     gsap.from($('.slide_labels_titles li.active'), { x: '100%', duration: 1, ease: 'power2.out' });
   
   }
