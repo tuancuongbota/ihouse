@@ -15,7 +15,9 @@ body{
         }
     }
     &.header-scroll-open {
-       
+       .studio-prersonnel-nav{
+        top:0;
+       }
         .header {
           background: #fff;
           transition: background-color .6s,top .3s linear;

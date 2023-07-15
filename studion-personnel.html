@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Nhân sự | I.HOUSE</title>
-    <link href="statics/css/style.css?v=4.51" rel="stylesheet" />
+    <link href="statics/css/style.css?v=4.6" rel="stylesheet" />
     <script src="statics/js/jquery.min.js?v=2.2.1" type="text/javascript"></script>
     <script src="statics/js/slick-carousel/slick.min.js" type="text/javascript"></script>
     <script src="statics/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
@@ -12,7 +12,7 @@
     <script src="statics/js/bootstrap/bootstrap.bundle.min.js" type="text/javascript"></script>
     <script src="statics/js/gsap/gsap.min.js" type="text/javascript"></script>
     <script src="statics/js/gsap/ScrollTrigger.min.js" type="text/javascript"></script>
-    <script src="statics/js/js_custom.js?v=3.3" type="text/javascript"></script>
+    <script src="statics/js/js_custom.js?v=3.4" type="text/javascript"></script>
 </head>
 <body class="body-page">
 <div class="mb-gradient"></div>
@@ -125,124 +125,123 @@
     </header>
     <div class="header-top-gradient"></div>
     <div class="studio-prersonnel-page">
-        <div class="studio-breadcrumb">
-            <div class="container">
-                <ol class="breadcrumb">
-                    <li class="breadcrumb-item">
-                        <a href="studion-personnel.html" title="Nhân sự">Nhân sự</a>
-                    </li>
-                    <li class="breadcrumb-item active ">
-                        Tất cả
-                    </li>
-                </ol>
+        <div class="studio-prersonnel-nav">
+            <div class="studio-breadcrumb">
+                <div class="container">
+                    <ol class="breadcrumb">
+                        <li class="breadcrumb-item">
+                            <a href="studion-personnel.html" title="Nhân sự">Nhân sự</a>
+                        </li>
+                        <li class="breadcrumb-item active ">
+                            Tất cả
+                        </li>
+                    </ol>
+                </div>
+            </div>
+            <div class="filters_container">
+                <div class="container">
+                    <div class="filters">
+                        <app-search class="d-none d-sm-flex">
+                           <div class="search_container">
+                            <input type="text" aria-label="Search input" class="search" placeholder=" &nbsp; Tìm kiếm.." />
+                           </div>
+                           
+                        </app-search>
+                        <app-filters class="order-1">
+                           <div class="filter">
+                              <div class="dropdown">
+                                 <button type="button" class="dropdown-toggle btn btn-sm text-pure-black" title="Tất cả các chức vụ" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="truncate-1">Tất cả các chức vụ</span>
+                                </button>
+                                 <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+                                    <div class="dropdown-wrapper">
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Quản lý"> Quản lý </h5>
+                                       </button>
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Nhân viên"> Nhân viên </h5>
+                                       </button>
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Đối tác liên kết"> Đối tác liên kết </h5>
+                                       </button>
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Đối tác chiến lược"> Đối tác chiến lược </h5>
+                                       </button>
+                                       
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                           </div>
+                           
+                        </app-filters>
+                        
+                        <app-filters class="order-1">
+                           <div class="filter">
+                              <div class="dropdown">
+                                 <button type="button" class="dropdown-toggle btn btn-sm text-pure-black" title="Phòng ban" id="dropdownMenu-order" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                    <span class="truncate-1">Phòng ban</span>
+                                </button>
+                                 <div class="dropdown-menu" aria-labelledby="dropdownMenu-order">
+                                    <div class="dropdown-wrapper">
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Phòng ban thiết kế"> Phòng ban thiết kế </h5>
+                                       </button>
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Phòng ban quản lý"> Phòng ban quản lý </h5>
+                                       </button>
+                                       <button class="dropdown-item" tabindex="0">
+                                          <h5 class="mb-0 truncate-1" title="Phòng ban đối tác"> Phòng ban đối tác</h5>
+                                       </button>
+                                       
+                                    </div>
+                                 </div>
+                              </div>
+                              
+                           </div>
+                           
+                        </app-filters>
+                        
+                        <div class="order-by order-3 d-none d-sm-flex">
+                            <button role="button" class="btn btn-transparent">
+                                <span>Sắp xếp</span><i class="fa-arrow-down-a-z fa-light"></i>
+                            </button>
+                        </div>
+                        <div class="d-flex order-2 order-sm-1 d-sm-none">
+                           <app-search>
+                              <div class="search_container">
+                                 <input type="text" data-hj-allow="" aria-label="Search input" class="search" placeholder=" &nbsp; Search people.." data-np-intersection-state="observed">
+                              </div>
+                              
+                           </app-search>
+                           <div class="order-by">
+                              <app-orderby>
+                                 <app-button>
+                                    <a role="button" class="btn btn-transparent active badge" target="" title="Order by Alphabetical" aria-label="Order by Alphabetical" href="" style="opacity: 1;">
+                                       <i class="fa-arrow-down-a-z fa-light"></i>
+                                    </a>
+                                 </app-button>
+                              </app-orderby>
+                              
+                           </div>
+                        </div>
+                     </div>
+                </div>
             </div>
         </div>
-        <div class="filters_container">
-            <div class="container">
-                <div class="filters">
-                    <app-search class="d-none d-sm-flex">
-                       <div class="search_container">
-                        <input type="text" aria-label="Search input" class="search" placeholder=" &nbsp; Search people.." />
-                       </div>
-                       
-                    </app-search>
-                    <app-filters class="order-1">
-                       <div class="filter">
-                          <div class="dropdown">
-                             <button type="button" class="dropdown-toggle btn btn-sm text-pure-black" title="All corporate titles" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="truncate-1">All corporate titles</span>
-                            </button>
-                             <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                                <div class="dropdown-wrapper">
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Senior Partner"> Senior Partner </h5>
-                                   </button>
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Partner"> Partner </h5>
-                                   </button>
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Associate Partner"> Associate Partner </h5>
-                                   </button>
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Associate"> Associate </h5>
-                                   </button>
-                                   
-                                </div>
-                             </div>
-                          </div>
-                          
-                       </div>
-                       
-                    </app-filters>
-                    
-                    <app-filters class="order-1">
-                       <div class="filter">
-                          <div class="dropdown">
-                             <button type="button" class="dropdown-toggle btn btn-sm text-pure-black" title="Boards" id="dropdownMenu-order" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                <span class="truncate-1">Boards</span>
-                            </button>
-                             <div class="dropdown-menu" aria-labelledby="dropdownMenu-order">
-                                <div class="dropdown-wrapper">
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Design Board"> Design Board </h5>
-                                   </button>
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Management Board"> Management Board </h5>
-                                   </button>
-                                   <button class="dropdown-item" tabindex="0">
-                                      <h5 class="mb-0 truncate-1" title="Partnership Board"> Partnership Board </h5>
-                                   </button>
-                                   
-                                </div>
-                             </div>
-                          </div>
-                          
-                       </div>
-                       
-                    </app-filters>
-                    
-                    <div class="order-by order-3 d-none d-sm-flex">
-                       <app-orderby>
-                          <app-button>
-                             <a role="button" class="btn btn-transparent active" target="" title="Order by Alphabetical" aria-label="Order by Alphabetical" href="">
-                                <span >Alphabetical</span><i  class="fa-arrow-down-a-z fa-light"></i>
-                             </a>
-                          </app-button>
-                       </app-orderby>
-                       
-                    </div>
-                    <div class="d-flex order-2 order-sm-1 d-sm-none">
-                       <app-search>
-                          <div class="search_container">
-                             <input type="text" data-hj-allow="" aria-label="Search input" class="search" placeholder=" &nbsp; Search people.." data-np-intersection-state="observed">
-                          </div>
-                          
-                       </app-search>
-                       <div class="order-by">
-                          <app-orderby>
-                             <app-button>
-                                <a role="button" class="btn btn-transparent active badge" target="" title="Order by Alphabetical" aria-label="Order by Alphabetical" href="" style="opacity: 1;">
-                                   <i class="fa-arrow-down-a-z fa-light"></i>
-                                </a>
-                             </app-button>
-                          </app-orderby>
-                          
-                       </div>
-                    </div>
-                 </div>
-            </div>
-        </div>
+       
         <div class="accordion">
             <div class="accordion-item">
-               <div role="tab" class="accordion-header">
+               <div role="tab" class="accordion-header" id="ngb-panel-0-header">
                     <div class="custom-header">
                         <div class="gap-3">
                             <h2 class="text-pure-black">Nhân sự</h2>
                         </div>
+                        
                         <div class="icon">
-                            <a role="button" class="btn btn-grey badge" target="" title="Collapse section" aria-label="Collapse section" href="">
+                            <button role="button" class="btn btn-grey badge">
                                 <i class="fal fa-chevron-up"></i>
-                            </a>
+                            </button>
                         </div>
                   </div>
                </div>

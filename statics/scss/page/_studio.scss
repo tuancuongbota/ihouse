@@ -78,9 +78,12 @@
 
   .studio-prersonnel-page {
     overflow: hidden;
-    padding-top: 74px;
+    padding-top: 241px;
+    @media screen and (max-width: 767px){
+        padding-top: 353px;
+    }
     @media screen and (min-width: 1024px){
-        padding-top: 78px;
+        padding-top: 241px;
     }
     .filters {
         display: flex;
@@ -113,10 +116,12 @@
           max-width: 250px;
         }
       }
-      
       app-search {
         flex: 1;
         position: relative;
+        @media (max-width: 767px) {
+            flex: 0 0 100%;
+        }
       }
       
       .search_container {
@@ -166,8 +171,37 @@
         padding: 25px 0;
       }
       
-      .order-by a {
-        text-decoration: none;
+      .order-by {
+        a {
+            text-decoration: none;
+            outline: none;
+            box-shadow: none;
+        }
+        button {
+            gap: 0.5rem;
+            display: flex;
+            align-items: center;
+            transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+            text-align: center;
+            text-decoration: none;
+            vertical-align: middle;
+            cursor: pointer;
+            -webkit-user-select: none;
+            user-select: none;
+            background-color: transparent;
+            border: 1px solid transparent;
+            color: #1a1a1a;
+            padding: 4px 16px;
+            font-size: 14px;
+            min-height: 33px;
+             height: auto;
+             box-shadow: unset;
+             outline: none;
+        }
+        @media (min-width: 1440px){
+            border-left: 2px solid #ebebeb;
+            margin-left: auto;
+        }
       }
       .dropdown-toggle {
         outline: none;
@@ -189,6 +223,10 @@
         padding: 0;
         margin-top: 4px !important;
         box-shadow: 0 2px 8px #0003;
+      }
+      .dropdown-item.active, .dropdown-item:active{
+        background-color: #f5f5f5 !important;
+                font-weight: 700;
       }
        
 }
@@ -233,7 +271,15 @@
     padding: 30px 48px;
     background: #f5f5f5;
   }
-  
+  .studio-prersonnel-nav {
+    z-index: 999;
+    background-color: #fff;
+    border-bottom: 1px solid #ebebeb;
+    position: fixed;
+    transition: background-color .6s,top .3s linear;
+    width: 100%;
+    top: 75px;
+}
   .accordion .accordion-item {
     border: none;
   
@@ -255,7 +301,7 @@
         border: none;
         box-shadow: unset;
   
-        a {
+        button {
           height: 40px;
           width: 40px;
           padding: 0;
@@ -272,6 +318,9 @@
           white-space: nowrap;
           background-color: #ebebeb;
           border-color: #ebebeb;
+          text-decoration: none;
+          outline: none;
+          box-shadow: unset;
         }
       }
     }
@@ -292,5 +341,69 @@
         }
       }
     }
+  }
+  .studio-prersonnel-details-page {
+    padding-top: 150px;
+  
+    .studio-prersonnel-detail-img {
+      padding: 0 56px;
+      @media (max-width: 992px) {
+        padding: 0 10px;
+     }
+      img {
+        margin: auto;
+        display: block;
+        max-height: 90vh;
+        margin-top: 80px;
+      }
+    }
+    .studio-prersonnel-detail-text {
+        padding: 80px 30px 25px 0;
+        gap: 1.375rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        flex-wrap: wrap;
+      
+        h1 {
+          font-size: 21px;
+          font-weight: bold;
+          margin-bottom: 0;
+        }
+      }
+      
+      .studio-prersonnel-detail-name {
+        margin-bottom: 8px;
+      
+        h4 {
+          margin-bottom: 4px;
+          font-weight: 600;
+          line-height: 1.2;
+        }
+      }
+      
+      .studio-prersonnel-detail-right {
+        padding: 0 56px;
+        @media (max-width: 992px) {
+            padding: 0 10px;
+        }
+      
+        hr {
+          margin: 25px auto;
+          background-color: #ebebeb;
+          opacity: 1;
+        }
+      
+        .studio-prersonnel-desc {
+          font-weight: 400;
+          line-height: 28px;
+          color: #212529;
+        }
+      }
+      
+      .studio-prersonnel-details-box {
+        padding-bottom: 80px;
+      }
+      
   }
   

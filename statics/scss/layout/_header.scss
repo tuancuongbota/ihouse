@@ -1,7 +1,7 @@
 .header {
     height: 74px;
     position: fixed;
-    transition: background-color .6s;
+    transition: background-color .6s,top .3s linear;
     width: 100%;
     z-index: 1000;
     padding: 10px 0;

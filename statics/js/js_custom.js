@@ -703,5 +703,47 @@ if ($('.project-tabs').length) {
       $('.dropdown-menu').not($(this).next('.dropdown-menu')).hide();
       $(this).next('.dropdown-menu').toggle();
     });
+    $('.dropdown-item').click(function() {
+      $('.dropdown-menu').hide();
+    });
+  }
+  if ($('.accordion').length) {
+    $('.accordion .accordion-item .accordion-header .badge').click(function() {
+      var $collapse = $(this).closest('.accordion-item').find('.collapse');
+      var $header = $(this).closest('.accordion-header');
+      var $icon = $(this).find('.fa-chevron-up');
+  
+      if ($collapse.hasClass('show')) {
+        $collapse.removeClass('show');
+        $header.addClass('collapsed');
+        $icon.removeClass('fa-chevron-up').addClass('fa-chevron-down');
+      } else {
+        $collapse.addClass('show');
+        $header.removeClass('collapsed');
+        $icon.removeClass('fa-chevron-down').addClass('fa-chevron-up');
+      }
+  
+      if ($('.fa-chevron-up').length) {
+        $('.fa-chevron-up').removeClass('fa-chevron-up').addClass('fa-chevron-down');
+      } else {
+        $('.fa-chevron-down').removeClass('fa-chevron-down').addClass('fa-chevron-up');
+      }
+    });
+  
+    gsap.fromTo(
+      '.accordion .accordion-item .accordion-body .avatar',
+      { opacity: 0, y: 100 },
+      { opacity: 1, y: 0, duration: 1, stagger: 0.2 }
+    );
+  }
+  if ($('.order-by').length) {
+    $('.order-by .btn-transparent').click(function() {
+      var arrowIcon = $(this).find('.fa-arrow-down-a-z');
+      if (arrowIcon.hasClass('fa-arrow-down-a-z')) {
+        arrowIcon.removeClass('fa-arrow-down-a-z').addClass('fa-arrow-up-a-z');
+      } else {
+        arrowIcon.removeClass('fa-arrow-up-a-z').addClass('fa-arrow-down-a-z');
+      }
+    });
   }
 });
