@@ -12973,6 +12973,9 @@ img { max-width: 100%; }
 .bota_menu_bar_mb button span { background-image: -webkit-gradient(linear, left bottom, right top, from(#016b9b), color-stop(#037bb0), color-stop(#048cc5), color-stop(#039dda), to(#00aff0)); background-image: linear-gradient(to right top, #016b9b, #037bb0, #048cc5, #039dda, #00aff0); height: 4px; width: 34px; border-radius: 5px; display: block; }
 .bota_menu_bar_mb .icon-bar + .icon-bar { margin-top: 4px; }
 
+.body-page .phone-vr-img-circle { background-color: rgba(158, 158, 158, 0.35); }
+.body-page .phone-vr-circle-fill { background-color: rgba(158, 158, 158, 0.35); }
+
 .info-page { overflow: hidden; padding-top: 134px; }
 @media screen and (min-width: 1024px) { .info-page { padding-top: 138px; } }
 
