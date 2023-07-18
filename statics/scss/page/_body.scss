@@ -216,28 +216,14 @@ img{
   }
   #button-contact-vr {
     position: fixed;
-    bottom: 99px;
+    bottom: 90px;
     z-index: 99;
-    right: 0;
+    right: 70px;
   
     .button-contact {
       position: relative;
-      margin-top: -5px;
-  
       .phone-vr {
-        position: relative;
-        visibility: visible;
-        background-color: transparent;
-        width: 90px;
-        height: 90px;
-        cursor: pointer;
-        z-index: 11;
-        -webkit-backface-visibility: hidden;
-        -webkit-transform: translateZ(0);
-        transition: visibility .5s;
-        left: 0;
-        bottom: 0;
-        display: block;
+        margin-bottom: 15px;
       }
     }
   }
@@ -251,8 +237,6 @@ img{
     background-color: rgba(255, 255, 255, 0.15);
     border-radius: 50%;
     border: 2px solid transparent;
-    -webkit-animation: phone-vr-circle-fill 2.3s infinite ease-in-out;
-    animation: phone-vr-circle-fill 2.3s infinite ease-in-out;
     transition: all .5s;
     -webkit-transform-origin: 50% 50%;
     -ms-transform-origin: 50% 50%;
@@ -268,13 +252,11 @@ img{
     line-height: 40px;
     top: 25px;
     left: 25px;
-    position: absolute;
+    position: relative;
     border-radius: 50%;
     overflow: hidden;
     display: flex;
     justify-content: center;
-    -webkit-animation: phonering-alo-circle-img-anim 1s infinite ease-in-out;
-    animation: phone-vr-circle-fill 1s infinite ease-in-out;
   
     a {
       display: block;
@@ -402,11 +384,3 @@ img{
       margin-top: 4px;
     }
   }
-  .body-page{
-    .phone-vr-img-circle {
-      background-color: #000000;
-    }
-    .phone-vr-circle-fill {
-      background-color: rgba(70, 70, 70, 0.35);
-  }
-  } 
