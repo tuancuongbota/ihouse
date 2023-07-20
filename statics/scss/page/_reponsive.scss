@@ -1,3 +1,18 @@
+@media screen and (max-width: 1024px) { 
+  #projects_project{
+    .g-col-md-8, .g-col-md-4 {
+      grid-column: auto/span 6;
+    }
+  }  
+  .home-news{
+    .g-col-md-8 {
+      grid-column: auto/span 12;
+    }
+  } 
+  .d-mb-none{
+    display: none !important;
+  }
+}
 @media screen and (max-width: 992px) { 
   .search-page .nav-tabs {
     max-width: calc(100% - 60px);
@@ -239,6 +254,7 @@
       .green-detail-list-item .green-detail-card-body {
         padding: 32px;
       } 
+        
 }
 @media screen and (max-width: 767px) { 
   .studio-page {

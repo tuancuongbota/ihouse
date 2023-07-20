@@ -1471,3 +1471,38 @@
       }
          
 }
+.projects {
+  .slick-arrow {
+    position: absolute;
+    top: -56px;
+    right: 0;
+    height: 40px;
+    width: 40px;
+    font-size: 0;
+    border: none;
+    padding: 0;
+    background-color: #333;
+    border-color: #333;
+    border-radius: 100%;
+  }
+
+  .slick-prev {
+    right: 50px;
+
+    &:before {
+      content: "\f053";
+      font-family: "Font Awesome 6 Pro";
+      font-weight: 300;
+      color: #fff;
+      font-size: 14px;
+    }
+  }
+
+  .slick-next:before {
+    content: "\f054";
+    font-family: "Font Awesome 6 Pro";
+    font-weight: 300;
+    color: #fff;
+    font-size: 14px;
+  }
+}

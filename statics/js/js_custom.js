@@ -755,4 +755,48 @@ if ($('.project-tabs').length) {
     homeNews.scrollIntoView({ behavior: 'smooth' });
    });
   }
+
+if ($('#projects_project').length) {
+  var projectsStudio = $('#projects_studio');
+  var projectsProject = $('#projects_project');
+  var slickInitialized = false;
+  if (window.innerWidth < 600) {
+    if (!slickInitialized) {
+      projectsStudio.add(projectsProject).slick({
+        dots: false,
+        infinite: true,
+        speed: 300,
+        slidesToShow: 1,
+        centerMode: false,
+        variableWidth: true
+      });
+      slickInitialized = true;
+    }
+    projectsStudio.add(projectsProject).removeClass("grid").addClass("slick-projects");
+  } else {
+    projectsStudio.add(projectsProject).removeClass("slick-projects").addClass("grid");
+  }
+  $(window).on('resize', function() {
+    if (window.innerWidth < 600) {
+      if (!slickInitialized) {
+        projectsStudio.add(projectsProject).slick({
+          dots: false,
+          infinite: true,
+          speed: 300,
+          slidesToShow: 1,
+          centerMode: false,
+          variableWidth: true
+        });
+        slickInitialized = true;
+      }
+      projectsStudio.add(projectsProject).removeClass("grid").addClass("slick-projects");
+    } else {
+      if (slickInitialized) {
+        projectsStudio.add(projectsProject).slick("unslick");
+        slickInitialized = false;
+      }
+      projectsStudio.add(projectsProject).removeClass("slick-projects").addClass("grid");
+    }
+  });
+}
 });

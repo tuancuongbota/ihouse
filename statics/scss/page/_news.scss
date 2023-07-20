@@ -924,6 +924,7 @@
         } 
     }
     .news-home-item {
+        width: 100%;
         overflow: hidden;
         height: 210px;
         display: flex;
@@ -984,6 +985,7 @@
       }
       .projects{
         .projects-right{
+           
             .content {
                 padding: 0 1.875rem;
             }
