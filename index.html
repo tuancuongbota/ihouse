@@ -4,20 +4,21 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>| I.HOUSE</title>
-    <link href="statics/css/style.css?v=4.72" rel="stylesheet" />
+    <link href="statics/css/style.css?v=4.73" rel="stylesheet" />
     <script src="statics/js/jquery.min.js?v=2.2.1" type="text/javascript"></script>
     <script src="statics/js/slick-carousel/slick.min.js" type="text/javascript"></script>
     <script src="statics/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
+    <script src="statics/js/aos.js" type="text/javascript"></script>
     <script src="statics/js/gsap/gsap.min.js" type="text/javascript"></script>
     <script src="statics/js/gsap/TweenMax.min.js" type="text/javascript"></script>
     <script src="statics/js/gsap/ScrollTrigger.min.js" type="text/javascript"></script>
-    <script src="statics/js/js_custom.js?v=3.4" type="text/javascript"></script>
+    <script src="statics/js/js_custom.js?v=3.5" type="text/javascript"></script>
 </head>
-<body>
+<body class="dark-theme">
 <div class="mb-gradient"></div>
 <div class="search-gradient"></div>
 <div class="wrapper">
-    <header class="header">
+    <header class="header header-detail-page">
         <div class="container">
             <div class="row align-items-center">
                 <div class="col-xl-4 col-lg-4 col-sm-12 col-6">
@@ -125,6 +126,7 @@
     <div class="header-top-gradient"></div>
     <div class="body_main">
         <div class="slideshow-box">
+            <a class="arrow"></a>
             <div class="slick-slideshow slick-none">
                 <div class="item" aria-labelledby="home-title-slide0">
                     <a href="index.html" title="banner">
@@ -193,7 +195,7 @@
             </div>
         </div>
     </div>
-   <footer class="footer d-none d-xl-block d-lg-block">
+   <div class="footer d-none d-xl-block d-lg-block">
     <div class="container">
         <div class="row">
             <div class="col-xl-12">
@@ -236,8 +238,8 @@
             </div>
         </div>
     </div>
-   </footer>
-   <div id="button-contact-vr">
+</div>
+<div id="button-contact-vr">
     <div id="gom-all-in-one">
        <div id="zalo-vr" class="button-contact">
           <div class="phone-vr">
@@ -252,5 +254,412 @@
     </div>
  </div>
 </div>
+<div class="body_main_all">
+    <div class="projects green-minimalism">
+        <div class="container">
+            <div class="title_container">
+                <h1 class="title mb-0">Tối giản xanh</h1>
+            </div>
+            <div class="grid homepage-block">
+                <div class="block position-relative g-col-12 g-col-md-12" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="toi-gian-xanh.html" title="Tối giản xanh">
+                            <img src="statics/img/toi-gian-xanh-14.jpg" alt="" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Các giải pháp về tối giản xanh</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="projects">
+        <div class="container">
+            <div class="title_container">
+                <h1 class="title mb-0">Studio</h1>
+            </div>
+            <div class="grid homepage-block">
+                <div class="block position-relative g-col-12 g-col-md-8" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="studio.html" title="Studio">
+                            <img src="statics/img/studio.jpeg" alt="Studio" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Studio</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="news-detail.html" title="Nhóm thiết kế">
+                            <img src="statics/img/nhom-thiet-ket.jpg" alt="Nhóm thiết kế" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Nhóm thiết kế</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="news-detail.html" title="Nhóm mô hình">
+                            <img src="statics/img/project-8.jpg" alt="Nhóm mô hình" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Nhóm mô hình</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="news-detail.html" title="Nhóm thi công xây dựng">
+                            <img src="statics/img/project-9.jpg" alt="" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Nhóm thi công xây dựng</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="#" title="Nhóm thi công nội thất">
+                            <img src="statics/img/05.jpg" alt="Nhóm thi công nội thất" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Nhóm thi công nội thất</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="projects">
+        <div class="container">
+            <div class="title_container">
+                <h1 class="title mb-0">Dự án</h1>
+            </div>
+            <div class="grid homepage-block">
+                <div class="block position-relative g-col-12 g-col-md-8" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="du-an.html" title="Tất cả dự án">
+                            <img src="statics/img/du-an.jpg" alt="Tất cả dự án" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Tất cả Dự án</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="content">
+                        <div class="quote m-0">
+                           <h3 class="quote-text truncate-4">Ngay từ đầu, hoạt động của chúng tôi đã được thành lập dựa trên triết lý đổi mới, bền vững và thiết kế</h3>
+                           <h4 class="quotee">I.HOUSE ARCHITECTURE & CONSTRUCTION</h4>
+                        </div>
+                     </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="project-item.html" title="Dự án mới hoàn thành">
+                            <img src="statics/img/project-1.jpg" alt="Dự án mới hoàn thành" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Dự án mới hoàn thành </h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="project-item.html" title="Dự án đang thi công">
+                            <img src="statics/img/project-2.jpg" alt="Dự án đang thi công" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Dự án đang thi công</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 projects-right" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="project-item.html" title="Nhà riêng">
+                            <img src="statics/img/project-3.jpg" alt="Nhà riêng" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Nhà riêng</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="home-news">
+        <div class="container">
+            <div class="title_container">
+                <h1 class="title mb-0">Tin tức</h1>
+            </div>
+            <div class="grid homepage-block">
+                <div class="block position-relative g-col-12 g-col-md-8" data-aos="fade-up" data-aos-easing="linear">
+                    <div class="news-home-item">
+                        <a href="news.html" title="Tất cả tin tức">
+                            <img src="statics/img/news.jpg" alt="Tất cả tin tức" />
+                            <div class="overlay-div">
+                                <h2 class="overlay-text mb-0">Tất cả tin tức</h2>
+                            </div>
+                        </a>
+                    </div>
+                </div>
+                <div class="block g-col-12 g-col-md-4 subscribe" data-aos="fade-up" data-aos-easing="linear">
+                    <form>
+                        <h2>Luôn cập nhật tin tức và dự án I.HOUSE mới nhất.</h2>
+                        <input type="text" name="email" placeholder="Email..." />
+                        <button>Theo dõi</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+    <footer class="footer-custom">
+        <div class="footer-top-custom">
+            <div class="clearfix">
+                <div class="row">
+                    <div class="col col-xl-3 col-lg-4 col-sm-12 col-12 margin-bottom-20">
+                        <div class="footer-list-item">
+                            <h4 class="footer-title">
+                                Dự án<span class="fp-fh-chevron"></span>
+                            </h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="" title="Dự án mới hoàn thành">
+                                        Dự án mới hoàn thành
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Dự án đang thi công">
+                                        Dự án đang thi công 
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Nhà riêng">
+                                        Nhà riêng
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Căn hộ">
+                                        Căn hộ
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Khách sạn và nhà hàng">
+                                        Khách sạn và nhà hàng
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Văn phòng">
+                                        Văn phòng 
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col col-xl-3 col-lg-4 col-sm-12 col-12  margin-bottom-20">
+                        <div class="footer-list-item">
+                            <h4 class="footer-title">
+                                Tối giản xanh<span class="fp-fh-chevron"></span>
+                            </h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="gioi-thieu.html" title="Giới thiệu">
+                                        Giới thiệu
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Video về tối giản xanh">
+                                        Video về tối giản xanh
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Bản mới nhất về Tối giản xanh">
+                                       Bản mới nhất về Tối giản xanh
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Bản mới nhì về Tối giản xanh">
+                                        Bản mới nhì về Tối giản xanh
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Bản mới ba về Tối giản xanh">
+                                        Bản mới ba về Tối giản xanh
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Bản mới tư về Tối giản xanh">
+                                        Bản mới tư về Tối giản xanh
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col col-xl-3 col-lg-4 col-sm-12 col-12  margin-bottom-20">
+                        <div class="footer-list-item">
+                            <h4 class="footer-title">
+                                Tin tức<span class="fp-fh-chevron"></span>
+                            </h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="" title="Góc tư vấn">
+                                        Góc tư vấn
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Tin tức công ty">
+                                        Tin tức công ty
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Thông cáo báo chí">
+                                        Thông cáo báo chí
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Vật liệu hoàn thiện">
+                                        Vật liệu hoàn thiện
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col col-xl-3 col-lg-4 col-sm-12 col-12  margin-bottom-20">
+                        <div class="footer-list-item">
+                            <h4 class="footer-title">
+                                Studio<span class="fp-fh-chevron"></span>
+                            </h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="" title=" Nhân sự">
+                                        Nhân sự
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Môi trường làm việc">
+                                        Môi trường làm việc
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Cuộc sống ở I.HOUSE">
+                                       Cuộc sống ở I.HOUSE
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Nhóm chuyên gia">
+                                        Nhóm chuyên gia
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                    <div class="col col-xl-3 col-lg-4 col-sm-12 col-12  margin-bottom-20">
+                        <div class="footer-list-item">
+                            <h4 class="footer-title">
+                                Về chúng tôi<span class="fp-fh-chevron"></span>
+                            </h4>
+                            <ul class="footer-links">
+                                <li>
+                                    <a href="" title="Thương hiệu I.HOUSE">
+                                        Thương hiệu I.HOUSE
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Sơ đồ tổ chưc">
+                                        Sơ đồ tổ chưc
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Lĩnh vực và quy trình làm việc">
+                                        Lĩnh vực và quy trình làm việc
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Giá trị cốt lõi">
+                                        Giá trị cốt lõi
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="" title="Tiêu chí - Tầm nhìn - Sứ mệnh">
+                                        Tiêu chí - Tầm nhìn - Sứ mệnh
+                                    </a>
+                                </li>
+                                <li>
+                                    <a href="gioi-thieu.html" title="Giới thiệu">
+                                        Giới thiệu
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom-custom">
+            <div class="container">
+                <div class="row">
+                    <div class="col-xl-3 col-lg-3 col-sm-12">
+                        <div class="copyright">© Copyright 2007 I.House</div>
+                    </div>
+                    <div class="col-xl-9 col-lg-9 col-sm-12">
+                        <div class="footer-bottom-right">
+                            <ul class="social-media-links-platforms">
+                                <li>
+                                   <a href="/rss.xml" target="_blank">
+                                    <span class="fa-solid fa-rss"></span>
+                                   </a>
+                                </li>
+                                <li>
+                                   <a href="https://plus.google.com/104624481405046490700" target="_blank" rel="noopener">
+                                    <span class="fa-brands fa-google-plus"></span>
+                                   </a>
+                                </li>
+                                <li>
+                                   <a href="https://www.facebook.com/ihousevn" target="_blank" rel="noopener">
+                                    <span class="fa-brands fa-facebook"></span>
+                                   </a>
+                                </li>
+                                <li>
+                                   <a href="https://www.twitter.com/ihousevn" target="_blank" rel="noopener">
+                                    <span class="fa-brands fa-twitter"></span>
+                                   </a>
+                                </li>
+                             </ul>
+                             <div class="language">
+                                <div class="language_overlay_content" style="display: none;">
+                                    <ul class="language_list">
+                                        <li class="active">
+                                            <a href="#" lang="vi" title="Vietnamese">
+                                                Vietnamese
+                                            </a>
+                                        </li>
+                                        <li>
+                                            <a href="#" lang="en" title="English">
+                                                English
+                                            </a>
+                                        </li>
+                                    </ul>
+                                </div>
+                                <button type="button" name="button" class="language_btn">
+                                    <span class="language_content" title="Vietnamese">Vietnamese</span>
+                                    <span class="language_chevron"></span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+</div>
+
 </body>
 </html>

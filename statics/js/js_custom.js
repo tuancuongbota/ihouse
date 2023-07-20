@@ -746,4 +746,13 @@ if ($('.project-tabs').length) {
       }
     });
   }
+  if ($('.body_main_all').length) {
+    AOS.init();
+    var arrowLink = document.querySelector('a.arrow');
+    arrowLink.addEventListener('click', function(event) {
+    event.preventDefault(); 
+    var homeNews = document.querySelector('.green-minimalism');
+    homeNews.scrollIntoView({ behavior: 'smooth' });
+   });
+  }
 });

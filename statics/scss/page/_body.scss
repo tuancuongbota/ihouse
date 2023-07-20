@@ -1,11 +1,13 @@
 body{
     background: #fff;
     color: #000;
-    font-family: "Open Sans",Helvetica,Arial;
     line-height: 1.6;
     letter-spacing: .5px;
     font-size: 16px;
-    font-size: 16px;
+    &.dark-theme {
+      background-color: #1a1a1a;
+      color: #fff;
+    }
     &.search_active{
         .header-search {
             width: 40%;

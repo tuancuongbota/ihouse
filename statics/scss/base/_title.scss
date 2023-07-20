@@ -1,0 +1,11 @@
+.title_container {
+    padding-top: 60px;
+    padding-bottom: 17px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    h1,h2{
+        font-weight: 500;
+        color: #fff;
+    }
+}
