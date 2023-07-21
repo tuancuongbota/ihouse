@@ -760,7 +760,7 @@ if ($('#projects_project').length) {
   var projectsStudio = $('#projects_studio');
   var projectsProject = $('#projects_project');
   var slickInitialized = false;
-  if (window.innerWidth < 600) {
+  if (window.innerWidth < 767) {
     if (!slickInitialized) {
       projectsStudio.add(projectsProject).slick({
         dots: false,
@@ -768,7 +768,7 @@ if ($('#projects_project').length) {
         speed: 300,
         slidesToShow: 1,
         centerMode: false,
-        variableWidth: true
+        variableWidth: true,
       });
       slickInitialized = true;
     }
@@ -777,7 +777,7 @@ if ($('#projects_project').length) {
     projectsStudio.add(projectsProject).removeClass("slick-projects").addClass("grid");
   }
   $(window).on('resize', function() {
-    if (window.innerWidth < 600) {
+    if (window.innerWidth < 767) {
       if (!slickInitialized) {
         projectsStudio.add(projectsProject).slick({
           dots: false,
@@ -785,7 +785,7 @@ if ($('#projects_project').length) {
           speed: 300,
           slidesToShow: 1,
           centerMode: false,
-          variableWidth: true
+          variableWidth: true,
         });
         slickInitialized = true;
       }

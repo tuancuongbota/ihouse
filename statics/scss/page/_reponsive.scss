@@ -12,6 +12,11 @@
   .d-mb-none{
     display: none !important;
   }
+  #projects_studio .projects-right .overlay-div span {
+    left: 0;
+    right: 0;
+    text-align: center;
+}
 }
 @media screen and (max-width: 992px) { 
   .search-page .nav-tabs {
@@ -257,6 +262,11 @@
         
 }
 @media screen and (max-width: 767px) { 
+  #projects_studio .projects-right .overlay-div span {
+    left: 30px;
+    right: auto;
+    text-align: left;
+}
   .studio-page {
     .studio-content .container {
       padding: 0 20px;
