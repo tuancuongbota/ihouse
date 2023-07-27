@@ -204,16 +204,20 @@ if($('.language_mb_btn').length) {
               "opacity": "1",
               "transform": "matrix(1, 0, 0, 1, 0, 0)"
             });
-          }, delay + 100); 
+          }, delay + 700); 
         }
       }, delay);
   
-      delay += 100; 
+      delay += 700; 
     });
   
     footerItems.css({
       "opacity": "0",
       "transform": "matrix(1, 0, 0, 1, 0, 100)"
+    });
+    $(".footer-bottom-custom").css({
+      "opacity": "1",
+      "transform": "matrix(1, 0, 0, 1, 0, 0)"
     });
   }
   if ($('.footer-title').length) {
