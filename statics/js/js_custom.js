@@ -204,7 +204,7 @@ if($('.language_mb_btn').length) {
               "opacity": "1",
               "transform": "matrix(1, 0, 0, 1, 0, 0)"
             });
-          }, delay + 700); 
+          }, delay + 300); 
         }
       }, delay);
   
