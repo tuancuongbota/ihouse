@@ -497,7 +497,6 @@ if ($('.project-tabs').length) {
         }
       });
     });
-    
     function isElementVisible(element) {
       const viewportHeight = $(window).height();
       const elementTop = element.offset().top;
@@ -506,27 +505,87 @@ if ($('.project-tabs').length) {
     
       return (elementTop < (scrollTop + viewportHeight)) && (elementBottom > scrollTop);
     }
-    $('.project-button-primary').click(function() {
-      $('.project-gallery-overlay').css('opacity', '0').css('display', 'block').animate({ opacity: 1 }, 500);
-    
-      var projectItems = $(".project-gallery-single");
-      var delay = 0;
-      projectItems.each(function(index) {
-        var currentprojectItem = $(this);
-        setTimeout(function() {
-          setTimeout(function() {
-            currentprojectItem.removeClass("is-hidden");
-            setTimeout(function() {
-              currentprojectItem.find("img").removeClass("is-blurred");
-              currentprojectItem.addClass("is-loaded");
-            }, 500);
-          });
+  }
+  if ($('.project-button-primary').length) {
+    var button = document.querySelector('.project-button-primary');
+    var gallery = document.querySelector('.project-gallery-overlay');
+
+    button.addEventListener('click', function() {
+      var items = gallery.querySelectorAll('a');
+      var fancyboxItems = [];
+
+      items.forEach(function(item) {
+        fancyboxItems.push({
+          src: item.getAttribute('data-src'),
+          caption: item.getAttribute('data-caption')
         });
       });
-      updateCounter();
+
+      Fancybox.show(fancyboxItems, {
+        loop: true,
+        buttons: ['fullScreen', 'close'],
+        Thumbs: {
+          autoStart: true
+        },
+        animationEffect: "fade",
+        transitionEffect: "fade",
+        transitionDuration: 500,
+        arrows: true,
+        infobar: true,
+        caption: function(item) {
+          return item.caption;
+        }
+      });
     });
-    $('.project-gallery-overlay-close').click(function() {
-      $('.project-gallery-overlay').fadeOut(500);  
+  }
+  if ($('.grid-gallery-list').length) {
+    $('#blueprint-album').click(function() {
+      var items = $('.blueprint-albums a').map(function() {
+        return {
+          src: $(this).data('src'),
+          caption: $(this).data('caption')
+        };
+      }).get();
+
+      Fancybox.show(items, {
+        loop: true,
+        buttons: ['fullScreen', 'close'],
+        Thumbs: {
+          autoStart: true
+        },
+        animationEffect: "fade",
+        transitionEffect: "fade",
+        transitionDuration: 500,
+        arrows: true,
+        infobar: true,
+        caption: function(item) {
+          return item.caption;
+        }
+      });
+    });
+    $('#construction-photo').click(function() {
+      var items = $('.construction-photo a').map(function() {
+        return {
+          src: $(this).data('src'),
+          caption: $(this).data('caption')
+        };
+      }).get();
+
+      Fancybox.show(items, {
+        loop: true,
+        buttons: ['fullScreen', 'close'],
+        Thumbs: {
+          autoStart: true
+        },
+        animationEffect: "fade",
+        transitionEffect: "fade",
+        transitionDuration: 500,
+        arrows: true,
+        infobar: true,
+        caption: function(item) {
+          return item.caption;
+        }
+      });
     });
   }
   if ($('.project-gallery-single').length) {

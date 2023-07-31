@@ -4,14 +4,14 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Biệt thự MMs00 | I.House</title>
-    <link rel="stylesheet" href="statics/js/fancybox/jquery.fancybox.min.css" />
+    <link rel="stylesheet" href="statics/js/fancybox/5.0/fancybox.css" />
     <link href="statics/css/style.css" rel="stylesheet" />
     <script src="statics/js/jquery.min.js?v=2.2.1" type="text/javascript"></script>
     <script src="statics/js/slick-carousel/slick.min.js" type="text/javascript"></script>
     <script src="statics/js/bootstrap/bootstrap.min.js" type="text/javascript"></script>
     <script src="statics/js/gsap/gsap.min.js" type="text/javascript"></script>
     <script src="statics/js/gsap/ScrollTrigger.min.js" type="text/javascript"></script>
-    <script src="statics/js/fancybox/jquery.fancybox.min.js" type="text/javascript"></script>
+    <script src="statics/js/fancybox/5.0/fancybox.umd.js" type="text/javascript"></script>
     <script src="statics/js/js_custom.js" type="text/javascript"></script>
 </head>
 <body class="body-page">
@@ -267,7 +267,7 @@
                 <div class="fp-grid">
                     <div class="fp-grid-item is-hidden">
                         <div class="fp-grid-colour"></div>
-                            <a href="info-detail.html" class="fp-grid-content">
+                            <a href="javascript:void(0);" class="fp-grid-content" id="blueprint-album">
                                 <img src="statics/img/project-8.jpg" alt="Bản vẽ thiết kế" class="img-fluid is-blurred" />
                                 <div class="fp-grid-header">
                                     <div class="fp-grid-wrapper">                           
@@ -279,7 +279,7 @@
                     </div>
                     <div class="fp-grid-item is-hidden">
                         <div class="fp-grid-colour"></div>
-                            <a href="info-detail.html" class="fp-grid-content">
+                            <a href="javascript:void(0);" class="fp-grid-content" id="construction-photo">
                                 <img src="statics/img/project-9.jpg" alt="Ảnh thi công" class="img-fluid is-blurred" />
                                 <div class="fp-grid-header">
                                     <div class="fp-grid-wrapper">                           
@@ -363,86 +363,88 @@
             </div>
         </div>
     </div>
-    <div class="project-gallery-overlay project-non-touch">
-        <div class="project-gallery-swiper">
-            <div class="project-pswp">
-                <div class="project-pswp-bg"></div>
-                <div class="project-pswp-scroll-wrap">
-                    <div class="project-pswp-container">
-                        <div class="project-pswp-tem">
-                            <div class="project-pswp-zoom-wrap">
-                                <img class="project-pswp-img" src="statics/img/project-item.jpg" />
-                            </div>
-                        </div>
-                        <div class="project-pswp-ui">
-                            <div class="project-pswp-preloader">
-                                <div class="project-pswp-preloader-icn">
-                                  <div class="project-pswp-preloader-cut">
-                                    <div class="project-pswp-preloader-donut"></div>
-                                  </div>
-                                </div>
-                            </div>
-                        </div>
-                        <button class="project-pswp-button project-pswp-button-arrow-left" title="Previous (arrow left)"></button>
-                        <div class="project-pswp-top-bar">
-                            <div class="project-pswp-counter"></div>
-                        </div>
-                        <button class="project-pswp-button project-pswp-button-arrow-right" title="Next (arrow right)"></button>
-                    
-                    </div>
-                    
-                </div>
-            </div>
-        </div>
-        <div class="project-gallery-tiles">
-            <div class="project-gallery-tiles-wrapper">
-                <div class="project-gallery-single is-hidden is-selected">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/project-item.jpg" class="project-gallery-img is-blurred" alt="Image 0">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                </div>
-                <div class="project-gallery-single is-hidden">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/project-7.jpg" class="project-gallery-img is-blurred" alt="Image 1">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                </div>
-                <div class="project-gallery-single is-hidden">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/8Z8A1583_1.jpg" class="project-gallery-img is-blurred" alt="Image 2">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                 </div>
-                <div class="project-gallery-single is-hidden">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/8Z8A1551_1.jpg" class="project-gallery-img is-blurred" alt="Image 3">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                </div>
-                <div class="project-gallery-single is-hidden">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/8Z8A1521_0.jpg" class="project-gallery-img is-blurred" alt="Image 4">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                </div>
-                <div class="project-gallery-single is-hidden">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/8Z8A1498_1.jpg" class="project-gallery-img is-blurred" alt="Image 5">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                </div>
-                <div class="project-gallery-single is-hidden">
-                    <div class="project-gallery-content">
-                        <img src="statics/img/8Z8A1482_0.jpg" class="project-gallery-img is-blurred" alt="Image 6">
-                    </div>
-                    <div class="project-gallery-spacer"></div>
-                </div>
-            </div>
-        </div>
-        <div class="project-gallery-overlay-close">
-            <button class="project-button-icon"></button>
-        </div>
+    <div class="project-gallery-overlay">
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/project-item.jpg"
+         data-caption="Image 0"
+         >
+         <img src="statics/img/project-item.jpg" class="project-gallery-img" alt="Image 0">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/project-7.jpg"
+         data-caption="Image 1"
+         >
+         <img src="statics/img/project-7.jpg" class="project-gallery-img" alt="Image 1">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/8Z8A1583_1.jpg"
+         data-caption="Image 2"
+         >
+         <img src="statics/img/8Z8A1583_1.jpg" class="project-gallery-img" alt="Image 2">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/8Z8A1551_1.jpg"
+         data-caption="Image 3"
+         >
+         <img src="statics/img/8Z8A1551_1.jpg" class="project-gallery-img" alt="Image 3">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/8Z8A1521_0.jpg"
+         data-caption="Image 4"
+         >
+         <img src="statics/img/8Z8A1521_0.jpg" class="project-gallery-img" alt="Image 4">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/8Z8A1498_1.jpg"
+         data-caption="Image 5"
+         >
+         <img src="statics/img/8Z8A1498_1.jpg" class="project-gallery-img" alt="Image 5">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/8Z8A1482_0.jpg"
+         data-caption="Image 6"
+         >
+         <img src="statics/img/8Z8A1482_0.jpg" class="project-gallery-img" alt="Image 6">
+        </a>
+    </div>
+    <div class="blueprint-albums">
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/project-8.jpg"
+         data-caption="Image 0"
+         >
+         <img src="statics/img/project-8.jpg" class="project-gallery-img" alt="Image 0">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/project-2.jpg"
+         data-caption="Image 1"
+         >
+         <img src="statics/img/project-2.jpg" class="project-gallery-img" alt="Image 1">
+        </a>
+    </div>
+    <div class="construction-photo">
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/project-9.jpg"
+         data-caption="Image 0"
+         >
+         <img src="statics/img/project-9.jpg" class="project-gallery-img" alt="Image 0">
+        </a>
+        <a
+         data-fancybox="gallery"
+         data-src="statics/img/project-3.jpg"
+         data-caption="Image 1"
+         >
+         <img src="statics/img/project-3.jpg" class="project-gallery-img" alt="Image 1">
+        </a>
     </div>
     <footer class="footer-custom">
         <div class="footer-top-custom">
