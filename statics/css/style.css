@@ -13921,7 +13921,7 @@ img { max-width: 100%; }
 .project-detail-page .project-pd-project-types .project-pd-types-title { margin-bottom: 6px; }
 .project-detail-page .project-pd-project-types a { cursor: pointer; display: inline-block; font-family: "Open Sans",Helvetica,Arial; min-width: 80px; min-height: 32px; height: auto; text-align: center; font-size: 13px; border: none; border-radius: 20px; font-weight: 400; letter-spacing: .5px; line-height: 19px; padding: 7px 18px; margin: 0; text-decoration: none; background-color: rgba(255, 255, 255, 0.15); color: #333; }
 @media screen and (min-width: 768px) { .project-detail-page .grid-gallery-list .fp-grid .fp-grid-item:nth-child(2n) { width: calc(50% - 70px); margin-right: 50px; margin-left: 20px; } }
-.project-detail-page .project-gallery-overlay, .project-detail-page .blueprint-album, .project-detail-page .construction-photo { left: 0; top: 0; width: 100%; height: 100%; position: fixed; background: #fff; z-index: 1000; display: none; }
+.project-detail-page .project-gallery-overlay, .project-detail-page .blueprint-albums, .project-detail-page .construction-photo { left: 0; top: 0; width: 100%; height: 100%; position: fixed; background: #fff; z-index: 1000; display: none; }
 .project-detail-page .project-gallery-swiper { position: relative; height: 100%; width: 100%; -webkit-transform: translate3d(0, 0, 0); transform: translate3d(0, 0, 0); }
 @media screen and (min-width: 768px) { .project-detail-page .project-gallery-swiper { width: calc(100% - 147px); -webkit-transform: translate3d(147px, 0, 0); transform: translate3d(147px, 0, 0); } }
 .project-detail-page .project-pswp { display: block; position: fixed; width: 100%; height: 100%; left: 0; top: 0; overflow: hidden; -ms-touch-action: none; touch-action: none; z-index: 1500; -webkit-text-size-adjust: 100%; -webkit-backface-visibility: hidden; outline: 0; }
@@ -14187,5 +14187,4 @@ img { max-width: 100%; }
 @media screen and (max-width: 992px) { .body_main_all .footer-top-custom .footer-list-item .fp-fh-chevron { background: url(../img/chevron-down-white.svg) no-repeat center center; } }
 @media screen and (max-width: 992px) { .body_main_all .footer-bottom-custom .copyright { border-color: #ffffff73; } }
 .body_main_all .footer-custom, .body_main_all .footer-bottom-custom { border-color: #ffffff73; }
-
 /*# sourceMappingURL=style.css.map */
