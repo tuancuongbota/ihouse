@@ -60,7 +60,8 @@ $(document).ready(function(){
 
     $slickSlideshow.on('afterChange', function(event, slick, currentSlide) {
       isAnimating = false;
-      var $currentSlide = getCurrentSlide();
+      var $currentSlide = $(slick.$slides.get(currentSlide));
+      activateSlideTitle($currentSlide);
       $currentSlide.css('transform', 'matrix(1, 0, 0, 1, 0, 0)');
     });
 
@@ -72,10 +73,24 @@ $(document).ready(function(){
       var slideIndex = $slide.index();
       $slideLabelsTitles.removeClass('active');
       $('#home-title-slide' + slideIndex).addClass('active');
+        var $video = $slide.find('.fp-video');
+        if ($video.length > 0 && $video.attr('src')) {
+          $video.get(0).play();
+          $slide.find('img').css('display', 'none');
+          $video.addClass('playing');
+        } else {
+          $slide.find('img').css('display', 'block');
+          $video.removeClass('playing');
+        }
     }
 
     function deactivateSlide(slideIndex) {
       $('#home-title-slide' + slideIndex).removeClass('active');
+        var $slide = $('#home-title-slide' + slideIndex);
+        var $video = $slide.find('.fp-video');
+        if ($video.length > 0 && !$video.get(0).paused) {
+          $video.get(0).pause();
+        }
     }
 
     $(window).on('beforeunload', function() {
