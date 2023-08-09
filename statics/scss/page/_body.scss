@@ -21,43 +21,13 @@ body{
         top:0;
        }
         .header {
-          background: #fff;
+          background: #00000059;
           transition: background-color .6s,top .3s linear;
           .header-nav-list li a {
-            color: #000;
+            color: #fff;
           }
-        
-          .header-search-toggle {
-            background: url(../img/search-black.svg?v=2666) center center no-repeat transparent;
-          }
-          .header-search-wrapper{
-              &.active{
-                  border-bottom: solid 1px #000;
-              }
-              input{
-                  color: #333 !important;
-                  &::-webkit-input-placeholder {
-                      color: #333;
-                  }
-                  &::-moz-placeholder {
-                      color: #333 !important;
-                  }
-                  &:-ms-input-placeholder {
-                      color: #333 !important;
-                  }
-                  &:-moz-placeholder {
-                      color: #333 !important;
-                  }
-              }
-          }
-          .logo img{
-              &:nth-child(2) {
-                  display: block;
-              }
-              &:nth-child(1) {
-                  display: none;
-              }
-          }
+      
+      
           &:hover{
             background: #000;
             .header-pulse{
@@ -85,9 +55,6 @@ body{
                 color: #fff;
               }
             
-              .header-search-toggle {
-                background: url(../img/search-white.svg?v=2666) center center no-repeat transparent;
-              }
               .header-search-wrapper{
                   &.active{
                       border-bottom: solid 1px #fff;
@@ -110,15 +77,6 @@ body{
               }
         }
         } 
-        .header-pulse{
-            #pulse{
-                stroke: #000;
-            }
-           
-            &::after {
-                background-color: #000;
-            }
-        }
         .header-toggle-opened{
             background-color: #000;
         }
